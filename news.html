@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ニュース一覧 | タキシード猫</title>
+        <meta name="description" content="タキシード猫はIPA専門のセレクトショップです。" />
+        <meta name="format-detection" content="telephone=no" />
+
+        <!-- favicon -->
+        <link rel="shortcut icon" href="img/logo/favicon.png" />
+        <link rel="apple-touch-icon" href="img/logo/favicon.png" />
+
+        <!-- googlefonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Oswald:wght@200..700&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- css -->
+        <link rel="stylesheet" href="css/base/reset.css" />
+        <link rel="stylesheet" href="css/base/variables.css" />
+        <link rel="stylesheet" href="css/base/base.css" />
+        <link rel="stylesheet" href="css/layout/header.css" />
+        <link rel="stylesheet" href="css/layout/footer.css" />
+        <link rel="stylesheet" href="css/layout/section.css" />
+        <link rel="stylesheet" href="css/component/button.css" />
+        <link rel="stylesheet" href="css/component/title.css" />
+        <link rel="stylesheet" href="css/component/card.css" />
+        <link rel="stylesheet" href="css/component/nav.css" />
+        <link rel="stylesheet" href="css/component/space.css" />
+
+        <link rel="stylesheet" href="css/pages/news/news.css" />
+
+        <link rel="stylesheet" href="css/animation/animation.css" />
+    </head>
+
+    <body>
+        <!-- header -->
+        <header class="header">
+            <div class="header-banner">
+                <p class="header-banner-text">6,000円以上のご注文で送料無料</p>
+            </div>
+            <div class="header-outer">
+                <div class="header-humburger">
+                    <div class="hamburger-menu" id="hamburger">
+                        <span class="bar bar-1"></span>
+                        <span class="bar bar-2"></span>
+                        <span class="bar bar-3"></span>
+                    </div>
+                    <nav class="header-humburger-nav overlay-menu" id="menuOverlay">
+                        <ul class="c-button-rotate">
+                            <li class="c-button-rotate-outer">
+                                <a href="index.html#concept" class="c-button-rotate-inner c-button-rotate-inner_large">
+                                    <div
+                                        class="c-button-rotate-text c-button-rotate-text_top c-button-rotate-text_large"
+                                    >
+                                        concept
+                                    </div>
+                                    <div
+                                        class="c-button-rotate-text c-button-rotate-text_bottom c-button-rotate-text_large"
+                                    >
+                                        concept
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="c-button-rotate-outer">
+                                <a href="product.html" class="c-button-rotate-inner c-button-rotate-inner_large">
+                                    <div
+                                        class="c-button-rotate-text c-button-rotate-text_top c-button-rotate-text_large"
+                                    >
+                                        products
+                                    </div>
+                                    <div
+                                        class="c-button-rotate-text c-button-rotate-text_bottom c-button-rotate-text_large"
+                                    >
+                                        products
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="c-button-rotate-outer">
+                                <a href="news.html" class="c-button-rotate-inner c-button-rotate-inner_large">
+                                    <div
+                                        class="c-button-rotate-text c-button-rotate-text_top c-button-rotate-text_large"
+                                    >
+                                        news
+                                    </div>
+                                    <div
+                                        class="c-button-rotate-text c-button-rotate-text_bottom c-button-rotate-text_large"
+                                    >
+                                        news
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="c-button-rotate">
+                            <li class="c-button-rotate-outer">
+                                <a href="contact.html" class="c-button-rotate-inner">
+                                    <div class="c-button-rotate-text c-button-rotate-text_top">お問い合わせ</div>
+                                    <div class="c-button-rotate-text c-button-rotate-text_bottom">お問い合わせ</div>
+                                </a>
+                            </li>
+                            <li class="c-button-rotate-outer">
+                                <a href="privacy.html" class="c-button-rotate-inner">
+                                    <div class="c-button-rotate-text c-button-rotate-text_top">
+                                        プライバシーポリシー
+                                    </div>
+                                    <div class="c-button-rotate-text c-button-rotate-text_bottom">
+                                        プライバシーポリシー
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="c-button-rotate-outer">
+                                <a href="tokushoho.html" class="c-button-rotate-inner">
+                                    <div class="c-button-rotate-text c-button-rotate-text_top">特商法に基づく表記</div>
+                                    <div class="c-button-rotate-text c-button-rotate-text_bottom">
+                                        特商法に基づく表記
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <nav class="header-nav">
+                        <ul class="c-button-rotate">
+                            <li class="c-button-rotate-outer">
+                                <a href="index.html#concept" class="c-button-rotate-inner">
+                                    <div class="c-button-rotate-text c-button-rotate-text_top">concept</div>
+                                    <div class="c-button-rotate-text c-button-rotate-text_bottom">concept</div>
+                                </a>
+                            </li>
+                            <li class="c-button-rotate-outer">
+                                <a href="product.html" class="c-button-rotate-inner">
+                                    <div class="c-button-rotate-text c-button-rotate-text_top">products</div>
+                                    <div class="c-button-rotate-text c-button-rotate-text_bottom">products</div>
+                                </a>
+                            </li>
+                            <li class="c-button-rotate-outer">
+                                <a href="news.html" class="c-button-rotate-inner">
+                                    <div class="c-button-rotate-text c-button-rotate-text_top">news</div>
+                                    <div class="c-button-rotate-text c-button-rotate-text_bottom">news</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <a class="header-logo" href="index.html#top">
+                    <img src="img/logo/logo1.png" alt="タキシード猫" width="1024" height="498" />
+                </a>
+                <ul class="header-list">
+                    <li>
+                        <a href="login.html" class="c-button-rotate-outer">
+                            <div class="c-button-rotate-inner c-button-rotate-inner_orange">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">ログイン</div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">ログイン</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cart.html" class="header-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                <rect width="256" height="256" fill="none" />
+                                <circle cx="88" cy="216" r="16" />
+                                <circle cx="192" cy="216" r="16" />
+                                <path
+                                    d="M16,32H40L76.75,164.28A16,16,0,0,0,92.16,176H191a16,16,0,0,0,15.42-11.72L232,72H51.11"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="16"
+                                />
+                            </svg>
+                            <span>1</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!-- header -->
+        <main>
+            <!-- news -->
+            <section class="news l-section-top">
+                <div class="c-title-level2-wrap c-title-level2-wrap_news">
+                    <h2 class="c-title-level2">news</h2>
+                </div>
+                <div class="news-container">
+                    <div class="c-card-list">
+                        <article>
+                            <a href="news-single.html" class="c-card">
+                                <picture class="c-card-thumbnail">
+                                    <source
+                                        srcset="img/news/lifestyle/lifestyle01.webp"
+                                        media="(min-width: 769px)"
+                                        type="image/webp"
+                                    />
+                                    <img
+                                        src="img/news/lifestyle/lifestyle01.jpg"
+                                        alt="ビールと映画の夜"
+                                        width="1536"
+                                        height="1024"
+                                    />
+                                </picture>
+                                <div class="c-card-box">
+                                    <div class="c-card-wrap">
+                                        <span class="c-card-tab">ライフスタイル</span>
+                                        <p class="c-card-data">2025年9月1日</p>
+                                    </div>
+                                    <p class="c-card-title">
+                                        「ビールと映画の夜」ライアン・マーフィー×IPA 禁断の夜間鑑賞会
+                                    </p>
+                                    <p class="c-card-description">
+                                        映画のジャンルに合わせてクラフトビールを選ぶことで、五感を刺激する“ビールと映画の夜”を演出し、自宅での鑑賞体験をより豊かに楽しむアイデアを提案します。
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="news-single.html" class="c-card">
+                                <picture class="c-card-thumbnail">
+                                    <source
+                                        srcset="img/news/brewery/brewery01.webp"
+                                        media="(min-width: 769px)"
+                                        type="image/webp"
+                                    />
+                                    <img
+                                        src="img/news/brewery/brewery01.jpg"
+                                        alt="森の中のブルワリー"
+                                        width="1536"
+                                        height="1024"
+                                    />
+                                </picture>
+                                <div class="c-card-box">
+                                    <div class="c-card-wrap">
+                                        <span class="c-card-tab">ブルワリー</span>
+                                        <p class="c-card-data">2025年9月1日</p>
+                                    </div>
+                                    <p class="c-card-title">森の中のブルワリー”が語る、自然と共に醸す哲学</p>
+                                    <p class="c-card-description">
+                                        「森の中のブルワリー」は、自然環境の保全と地域との共生を目指し、森の恵みを活かしたクラフトビール造りを通じて、持続可能な未来への思いと行動を広げている。
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="news-single.html" class="c-card">
+                                <picture class="c-card-thumbnail">
+                                    <source
+                                        srcset="img/news/culture/culture01.webp"
+                                        media="(min-width: 769px)"
+                                        type="image/webp"
+                                    />
+                                    <img
+                                        src="img/news/culture/culture01.jpg"
+                                        alt="ビールと映画の夜"
+                                        width="1536"
+                                        height="1024"
+                                    />
+                                </picture>
+                                <div class="c-card-box">
+                                    <div class="c-card-wrap">
+                                        <span class="c-card-tab">カルチャー</span>
+                                        <p class="c-card-data">2025年9月1日</p>
+                                    </div>
+                                    <p class="c-card-title">クラフトビールの歴史を5分で学ぶ</p>
+                                    <p class="c-card-description">
+                                        古代メソポタミアから現代日本のクラフトビール革命まで、5000年にわたるビールの進化を5分で旅することで、あなたを“ビール通”への第一歩へと誘う魅力的なガイド。
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="news-single.html" class="c-card">
+                                <picture class="c-card-thumbnail">
+                                    <source
+                                        srcset="img/news/event/event01.webp"
+                                        media="(min-width: 769px)"
+                                        type="image/webp"
+                                    />
+                                    <img
+                                        src="img/news/event/event01.jpg"
+                                        alt="ビールと映画の夜"
+                                        width="1536"
+                                        height="1024"
+                                    />
+                                </picture>
+                                <div class="c-card-box">
+                                    <div class="c-card-wrap">
+                                        <span class="c-card-tab">イベント</span>
+                                        <p class="c-card-data">2025年9月1日</p>
+                                    </div>
+                                    <p class="c-card-title">SNS投稿で参加！#私の一杯 フォトコンテスト</p>
+                                    <p class="c-card-description">
+                                        「SNS投稿で参加！#私の一杯
+                                        フォトコンテスト」は、あなたの“とっておきの一杯”を写真でシェアするだけで、豪華賞品とクラフトビール仲間とのつながりが広がる、気軽で楽しい参加型キャンペーンです。
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="news-single.html" class="c-card">
+                                <picture class="c-card-thumbnail">
+                                    <source
+                                        srcset="img/news/notice/notice01.webp"
+                                        media="(min-width: 769px)"
+                                        type="image/webp"
+                                    />
+                                    <img
+                                        src="img/news/notice/notice01.jpg"
+                                        alt="ビールと映画の夜"
+                                        width="1536"
+                                        height="1024"
+                                    />
+                                </picture>
+                                <div class="c-card-box">
+                                    <div class="c-card-wrap">
+                                        <span class="c-card-tab">お知らせ</span>
+                                        <p class="c-card-data">2025年9月1日</p>
+                                    </div>
+                                    <p class="c-card-title">サイトリニューアル記念！限定クーポン配布中</p>
+                                    <p class="c-card-description">
+                                        サイトリニューアルを記念して、今だけ使える限定クーポンが配布中—新しくなったページをのぞいて、お得にクラフトビールライフを始めるチャンスです！
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="news-single.html" class="c-card">
+                                <picture class="c-card-thumbnail">
+                                    <source
+                                        srcset="img/news/culture/culture03.webp"
+                                        media="(min-width: 769px)"
+                                        type="image/webp"
+                                    />
+                                    <img
+                                        src="img/news/culture/culture03.jpg"
+                                        alt="ビールと映画の夜"
+                                        width="1536"
+                                        height="1024"
+                                    />
+                                </picture>
+                                <div class="c-card-box">
+                                    <div class="c-card-wrap">
+                                        <span class="c-card-tab">カルチャー</span>
+                                        <p class="c-card-data">2025年9月1日</p>
+                                    </div>
+                                    <p class="c-card-title">クラフトビールはアートだ！デザインと哲学</p>
+                                    <p class="c-card-description">
+                                        ラベルに込められた思想や造り手の美学をひも解きながら、飲むだけでなく“眺めて味わう”クラフトビールの奥深い世界へと誘う一杯の芸術論を語ります。
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="news-single.html" class="c-card">
+                                <picture class="c-card-thumbnail">
+                                    <source
+                                        srcset="img/news/brewery/brewery02.webp"
+                                        media="(min-width: 769px)"
+                                        type="image/webp"
+                                    />
+                                    <img
+                                        src="img/news/brewery/brewery02.jpg"
+                                        alt="ビールと映画の夜"
+                                        width="1536"
+                                        height="1024"
+                                    />
+                                </picture>
+                                <div class="c-card-box">
+                                    <div class="c-card-wrap">
+                                        <span class="c-card-tab">ブルワリー</span>
+                                        <p class="c-card-data">2025年9月1日</p>
+                                    </div>
+                                    <p class="c-card-title">廃校を改装したブルワリーが話題！その背景とは？</p>
+                                    <p class="c-card-description">
+                                        鹿児島県指宿市の廃校が「いぶすきブルワリー」として生まれ変わり、地元食材を活かしたクラフトビール造りと観光拠点として地域再生を目指す、懐かしさと革新が融合した注目のプロジェクトです。
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="news-single.html" class="c-card">
+                                <picture class="c-card-thumbnail">
+                                    <source
+                                        srcset="img/news/review/review02.webp"
+                                        media="(min-width: 769px)"
+                                        type="image/webp"
+                                    />
+                                    <img
+                                        src="img/news/review/review02.jpg"
+                                        alt="ビールと映画の夜"
+                                        width="1536"
+                                        height="1024"
+                                    />
+                                </picture>
+                                <div class="c-card-box">
+                                    <div class="c-card-wrap">
+                                        <span class="c-card-tab">レビュー</span>
+                                        <p class="c-card-data">2025年9月1日</p>
+                                    </div>
+                                    <p class="c-card-title">今週の新入荷IPA、徹底レビュー！</p>
+                                    <p class="c-card-description">
+                                        今週の新入荷IPAを徹底レビューするこの記事は、ホップの香りや苦味の個性を比較しながら、あなたの“次の一本”を見つけるための味覚ガイドとして、クラフトビール好きの好奇心を刺激します。
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="news-single.html" class="c-card">
+                                <picture class="c-card-thumbnail">
+                                    <source
+                                        srcset="img/news/review/review01.webp"
+                                        media="(min-width: 769px)"
+                                        type="image/webp"
+                                    />
+                                    <img
+                                        src="img/news/review/review01.jpg"
+                                        alt="ビールと映画の夜"
+                                        width="1536"
+                                        height="1024"
+                                    />
+                                </picture>
+                                <div class="c-card-box">
+                                    <div class="c-card-wrap">
+                                        <span class="c-card-tab">レビュー</span>
+                                        <p class="c-card-data">2025年9月1日</p>
+                                    </div>
+                                    <p class="c-card-title">フルーツビールの魅力、甘さと酸味のバランス</p>
+                                    <p class="c-card-description">
+                                        果実由来の甘さと爽やかな酸味が織りなす絶妙なハーモニーを通じて、フルーツビールが“飲むデザート”として五感を満たす魅力を紹介し、ビールの新しい楽しみ方をご提案。
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="news-single.html" class="c-card">
+                                <picture class="c-card-thumbnail">
+                                    <source
+                                        srcset="img/news/culture/culture02.webp"
+                                        media="(min-width: 769px)"
+                                        type="image/webp"
+                                    />
+                                    <img
+                                        src="img/news/culture/culture02.jpg"
+                                        alt="ビールと映画の夜"
+                                        width="1536"
+                                        height="1024"
+                                    />
+                                </picture>
+                                <div class="c-card-box">
+                                    <div class="c-card-wrap">
+                                        <span class="c-card-tab">カルチャー</span>
+                                        <p class="c-card-data">2025年9月1日</p>
+                                    </div>
+                                    <p class="c-card-title">ビールのスタイル図鑑：あなたはどれが好き？</p>
+                                    <p class="c-card-description">
+                                        ラガーからスタウト、サワーまで多彩なビールの個性をわかりやすく紹介し、あなたの“運命の一杯”に出会えるきっかけをくれる、飲み比べが楽しくなるガイドです。
+                                    </p>
+                                </div>
+                            </a>
+                        </article>
+                        <div class="c-pagination">
+                            <a href="#" class="prev">&lt;</a>
+                            <div>
+                                <a href="#" class="active">1</a>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                                <a href="#">4</a>
+                                <a href="#">5</a>
+                                <span>...</span>
+                                <a href="#">10</a>
+                            </div>
+                            <a href="#" class="next">&gt;</a>
+                        </div>
+                    </div>
+                    <nav class="c-nav">
+                        <h4 class="c-nav-title">カテゴリー</h4>
+                        <form action="" class="c-nav-list">
+                            <div class="c-nav-checkbox">
+                                <input type="checkbox" id="milkshake" value="milkshake" />
+                                <label for="milkshake">お知らせ</label>
+                            </div>
+                            <div class="c-nav-checkbox">
+                                <input type="checkbox" id="session" value="session" />
+                                <label for="session">ブルワリー</label>
+                            </div>
+                            <div class="c-nav-checkbox">
+                                <input type="checkbox" id="hazy" value="hazy" />
+                                <label for="hazy">テイスティング</label>
+                            </div>
+                            <div class="c-nav-checkbox">
+                                <input type="checkbox" id="brut" value="brut" />
+                                <label for="brut">イベント</label>
+                            </div>
+                            <div class="c-nav-checkbox">
+                                <input type="checkbox" id="double" value="double" />
+                                <label for="double">カルチャー</label>
+                            </div>
+                            <div class="c-nav-checkbox">
+                                <input type="checkbox" id="triple" value="triple" />
+                                <label for="triple">ライフスタイル</label>
+                            </div>
+                        </form>
+                    </nav>
+                </div>
+            </section>
+            <!-- news -->
+        </main>
+        <!-- footer -->
+        <footer class="footer">
+            <div class="c-space c-space_primary c-space_img"></div>
+            <div class="footer-content">
+                <div class="footer-box">
+                    <a class="footer-logo" href="index.html#top">
+                        <img src="img/logo/logo3.png" alt="タキシード猫" width="1024" height="208" />
+                    </a>
+                    <div class="footer-sns">
+                        <ul>
+                            <li class="c-button-rotate-outer">
+                                <a
+                                    href="#"
+                                    class="c-button-rotate-inner c-button-rotate-inner_sns"
+                                    aria-label="X(旧Twitter)"
+                                >
+                                    <div class="c-button-rotate-text c-button-rotate-text_top">
+                                        <svg
+                                            aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 256 256"
+                                        >
+                                            <rect width="256" height="256" fill="none" />
+                                            <polygon
+                                                points="48 40 96 40 208 216 160 216 48 40"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="16"
+                                            />
+                                            <line
+                                                x1="113.88"
+                                                y1="143.53"
+                                                x2="48"
+                                                y2="216"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="16"
+                                            />
+                                            <line
+                                                x1="208"
+                                                y1="40"
+                                                x2="142.12"
+                                                y2="112.47"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="16"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div class="c-button-rotate-text c-button-rotate-text_bottom">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                            <rect width="256" height="256" fill="none" />
+                                            <polygon
+                                                points="48 40 96 40 208 216 160 216 48 40"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="16"
+                                            />
+                                            <line
+                                                x1="113.88"
+                                                y1="143.53"
+                                                x2="48"
+                                                y2="216"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="16"
+                                            />
+                                            <line
+                                                x1="208"
+                                                y1="40"
+                                                x2="142.12"
+                                                y2="112.47"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="16"
+                                            />
+                                        </svg>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="c-button-rotate-outer">
+                                <a
+                                    href="#"
+                                    class="c-button-rotate-inner c-button-rotate-inner_sns"
+                                    aria-label="instagram"
+                                >
+                                    <div class="c-button-rotate-text c-button-rotate-text_top">
+                                        <svg
+                                            aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 256 256"
+                                        >
+                                            <rect width="256" height="256" fill="none" />
+                                            <circle
+                                                cx="128"
+                                                cy="128"
+                                                r="40"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-miterlimit="10"
+                                                stroke-width="16"
+                                            />
+                                            <rect
+                                                x="32"
+                                                y="32"
+                                                width="192"
+                                                height="192"
+                                                rx="48"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="16"
+                                            />
+                                            <circle cx="180" cy="76" r="12" />
+                                        </svg>
+                                    </div>
+                                    <div class="c-button-rotate-text c-button-rotate-text_bottom">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                            <rect width="256" height="256" fill="none" />
+                                            <circle
+                                                cx="128"
+                                                cy="128"
+                                                r="40"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-miterlimit="10"
+                                                stroke-width="16"
+                                            />
+                                            <rect
+                                                x="32"
+                                                y="32"
+                                                width="192"
+                                                height="192"
+                                                rx="48"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="16"
+                                            />
+                                            <circle cx="180" cy="76" r="12" />
+                                        </svg>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="c-button-rotate-outer">
+                                <a
+                                    href="#"
+                                    class="c-button-rotate-inner c-button-rotate-inner_sns"
+                                    aria-label="facebook"
+                                >
+                                    <div class="c-button-rotate-text c-button-rotate-text_top">
+                                        <svg
+                                            aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 256 256"
+                                        >
+                                            <rect width="256" height="256" fill="none" />
+                                            <circle
+                                                cx="128"
+                                                cy="128"
+                                                r="96"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="16"
+                                            />
+                                            <path
+                                                d="M168,88H152a24,24,0,0,0-24,24V224"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="16"
+                                            />
+                                            <line
+                                                x1="96"
+                                                y1="144"
+                                                x2="160"
+                                                y2="144"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="16"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div class="c-button-rotate-text c-button-rotate-text_bottom">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                            <rect width="256" height="256" fill="none" />
+                                            <circle
+                                                cx="128"
+                                                cy="128"
+                                                r="96"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="16"
+                                            />
+                                            <path
+                                                d="M168,88H152a24,24,0,0,0-24,24V224"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="16"
+                                            />
+                                            <line
+                                                x1="96"
+                                                y1="144"
+                                                x2="160"
+                                                y2="144"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="16"
+                                            />
+                                        </svg>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="c-button-rotate-outer">
+                                <a
+                                    href="#"
+                                    class="c-button-rotate-inner c-button-rotate-inner_sns"
+                                    aria-label="youtube"
+                                >
+                                    <div class="c-button-rotate-text c-button-rotate-text_top">
+                                        <svg
+                                            aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 256 256"
+                                        >
+                                            <rect width="256" height="256" fill="none" />
+                                            <polygon
+                                                points="160 128 112 96 112 160 160 128"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="16"
+                                            />
+                                            <path
+                                                d="M24,128c0,29.91,3.07,47.45,5.41,56.47A16,16,0,0,0,39,195.42C72.52,208.35,128,208,128,208s55.48.35,89-12.58a16,16,0,0,0,9.63-10.95c2.34-9,5.41-26.56,5.41-56.47s-3.07-47.45-5.41-56.47a16,16,0,0,0-9.63-11C183.48,47.65,128,48,128,48s-55.48-.35-89,12.58a16,16,0,0,0-9.63,11C27.07,80.54,24,98.09,24,128Z"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="16"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div class="c-button-rotate-text c-button-rotate-text_bottom">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                            <rect width="256" height="256" fill="none" />
+                                            <polygon
+                                                points="160 128 112 96 112 160 160 128"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="16"
+                                            />
+                                            <path
+                                                d="M24,128c0,29.91,3.07,47.45,5.41,56.47A16,16,0,0,0,39,195.42C72.52,208.35,128,208,128,208s55.48.35,89-12.58a16,16,0,0,0,9.63-10.95c2.34-9,5.41-26.56,5.41-56.47s-3.07-47.45-5.41-56.47a16,16,0,0,0-9.63-11C183.48,47.65,128,48,128,48s-55.48-.35-89,12.58a16,16,0,0,0-9.63,11C27.07,80.54,24,98.09,24,128Z"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="16"
+                                            />
+                                        </svg>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="c-button-rotate-outer">
+                                <a href="#" class="c-button-rotate-inner c-button-rotate-inner_sns" aria-label="tiktok">
+                                    <div class="c-button-rotate-text c-button-rotate-text_top">
+                                        <svg
+                                            aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 256 256"
+                                        >
+                                            <rect width="256" height="256" fill="none" />
+                                            <path
+                                                d="M168,102a95.55,95.55,0,0,0,56,18V80a56,56,0,0,1-56-56H128V156a28,28,0,1,1-40-25.31V88c-31.83,5.67-56,34.54-56,68a68,68,0,0,0,136,0Z"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="16"
+                                            />
+                                        </svg>
+                                    </div>
+                                    <div class="c-button-rotate-text c-button-rotate-text_bottom">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                            <rect width="256" height="256" fill="none" />
+                                            <path
+                                                d="M168,102a95.55,95.55,0,0,0,56,18V80a56,56,0,0,1-56-56H128V156a28,28,0,1,1-40-25.31V88c-31.83,5.67-56,34.54-56,68a68,68,0,0,0,136,0Z"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="16"
+                                            />
+                                        </svg>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <nav class="footer-nav">
+                    <ul class="c-button-rotate">
+                        <li class="c-button-rotate-outer">
+                            <a href="index.html#concept" class="c-button-rotate-inner c-button-rotate-inner_large">
+                                <div class="c-button-rotate-text c-button-rotate-text_top c-button-rotate-text_large">
+                                    concept
+                                </div>
+                                <div
+                                    class="c-button-rotate-text c-button-rotate-text_bottom c-button-rotate-text_large"
+                                >
+                                    concept
+                                </div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="product.html" class="c-button-rotate-inner c-button-rotate-inner_large">
+                                <div class="c-button-rotate-text c-button-rotate-text_top c-button-rotate-text_large">
+                                    products
+                                </div>
+                                <div
+                                    class="c-button-rotate-text c-button-rotate-text_bottom c-button-rotate-text_large"
+                                >
+                                    products
+                                </div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="news.html" class="c-button-rotate-inner c-button-rotate-inner_large">
+                                <div class="c-button-rotate-text c-button-rotate-text_top c-button-rotate-text_large">
+                                    news
+                                </div>
+                                <div
+                                    class="c-button-rotate-text c-button-rotate-text_bottom c-button-rotate-text_large"
+                                >
+                                    news
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="footer-nav footer-nav_sub">
+                    <ul class="c-button-rotate">
+                        <li class="c-button-rotate-outer">
+                            <a href="contact.html" class="c-button-rotate-inner">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">お問い合わせ</div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">お問い合わせ</div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="privacy.html" class="c-button-rotate-inner">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">プライバシーポリシー</div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">プライバシーポリシー</div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="tokushoho.html" class="c-button-rotate-inner">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">特商法に基づく表記</div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">特商法に基づく表記</div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <a href="index.html#top" class="footer-button">
+                <p>back to top</p>
+            </a>
+            <small class="footer-copy">&copy;2025 tuxedo cat</small>
+        </footer>
+        <!-- footer -->
+        <!-- js -->
+        <script src="js/horizontalscroll.js"></script>
+        <script src="js/hamburger.js"></script>
+        <!-- js -->
+    </body>
+</html>

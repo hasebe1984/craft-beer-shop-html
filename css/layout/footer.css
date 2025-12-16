@@ -1,0 +1,92 @@
+/*
+layout > footer
+------------------------------
+*/
+
+.footer {
+    background-image: url(../../img/product/product-hero.webp);
+    background-attachment: fixed;
+    background-size: contain;
+    background-color: var(--bg-color-base_opacity);
+    background-blend-mode: lighten;
+    z-index: 200;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer-box {
+    outline: var(--outline-base);
+    outline-offset: var(--outline-offset-base);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-logo img {
+    width: 20vw;
+    display: block;
+    padding: 2vw 0 0 2vw;
+}
+
+.footer-sns ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.footer-sns li {
+    outline: var(--outline-base);
+    outline-offset: var(--outline-offset-base);
+    aspect-ratio: 1/1;
+}
+
+.footer-sns a {
+    width: 100%;
+}
+
+.footer-nav {
+    outline: var(--outline-base);
+    outline-offset: var(--outline-offset-base);
+    padding: 2vw 2vw 30vw 2vw;
+}
+
+.footer-button {
+    font-size: clamp(20px, 4vw, 70px);
+    font-weight: bold;
+    letter-spacing: 0.3rem;
+    text-align: center;
+    display: block;
+    padding: 12px 0;
+    text-transform: uppercase;
+    background-image: url(../../img/product/product-hero.webp);
+    background-attachment: fixed;
+    background-size: contain;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--font-color-primary);
+    transition: color 0.5s;
+}
+
+.footer-button:hover {
+    color: var(--font-color-secondary);
+    transition: color 0.5s;
+}
+
+.footer-copy {
+    text-align: center;
+    display: block;
+    outline: var(--outline-base);
+    outline-offset: var(--outline-offset-base);
+    background-color: var(--bg-color-base);
+}
+
+@media (min-width: 768px) {
+    .footer-sns li {
+        padding: 1.5vw;
+    }
+
+    .footer-logo img {
+        width: 200px;
+    }
+}

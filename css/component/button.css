@@ -1,0 +1,236 @@
+/*
+component > button
+------------------------------
+*/
+
+/* button */
+.c-button {
+    text-align: center;
+    vertical-align: center;
+    background-color: var(--bg-color-primary);
+    color: var(--font-color-primary);
+    padding: 2vw;
+    outline: var(--outline-base);
+    outline-offset: var(--outline-offset-base);
+    font-size: clamp(8px, 1.5vw, 16px);
+}
+
+.c-button_small {
+    padding: 4px;
+}
+
+/* back-to-list */
+.c-button_backtolist {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column: 1/3;
+}
+
+@media (min-width: 768px) {
+    .c-button_backtolist {
+        grid-column: 1/4;
+    }
+}
+
+/* pagenation */
+.c-pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    grid-column: 1/3;
+    padding: 2vw;
+    color: var(--font-color-secondary);
+    font-weight: bold;
+}
+
+.c-pagination div {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+}
+
+.c-pagination a {
+    transition: color 0.5s;
+
+}
+
+.c-pagination a:hover {
+    text-decoration: underline;
+    color: var(--font-color-base);
+    transition: color 0.5s;
+}
+
+@media (min-width: 768px) {
+    .c-pagination {
+        grid-column: 1/4;
+    }
+}
+
+/* rotate vertically */
+.c-button-rotate {
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+}
+
+.c-button-rotate-outer {
+    overflow: hidden;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.c-button-rotate-inner {
+    height: 1em;
+    overflow: hidden;
+    display: block;
+}
+
+.c-button-rotate-inner_large {
+    height: 30px;
+}
+
+.c-button-rotate-inner_sns {
+    height: 100%;
+}
+
+.c-button-rotate-inner_orange {
+    background-color: var(--bg-color-accent);
+    color: var(--font-color-primary);
+    padding: 0 8px;
+}
+
+.c-button-rotate-text {
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 8px;
+}
+
+.c-button-rotate-text_large {
+    font-size: 20px;
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.c-button-rotate-text_top {
+    top: 0;
+    transform: translateY(0);
+}
+
+.c-button-rotate-text_bottom {
+    top: 100%;
+    transform: translateY(0);
+}
+
+.c-button-rotate-outer:hover .c-button-rotate-text_top,
+.c-button-rotate-outer:hover .c-button-rotate-text_bottom {
+    transform: translateY(-100%);
+}
+
+@media (min-width: 768px) {
+    .c-button-rotate-inner {
+        height: 1.2em;
+    }
+
+    .c-button-rotate-inner_sns {
+        height: 100%;
+    }
+
+    .c-button-rotate_hidden {
+        display: none;
+    }
+
+    .c-button-rotate-text {
+        font-size: 12px;
+    }
+
+    .c-button-rotate-inner_large {
+        height: 55px;
+    }
+
+    .c-button-rotate-text_large {
+        font-size: 40px;
+    }
+}
+
+/* bg slide */
+.c-button-slide {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--font-color-primary);
+    background: var(--bg-color-primary);
+    overflow: hidden;
+    cursor: pointer;
+    padding: 2vw;
+    width: 100%;
+    height: 40px;
+}
+
+.c-button-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--bg-color-accent);
+    transition: width 0.5s ease;
+    z-index: 1;
+}
+
+.c-button-slide-text,
+.c-button-slide-arrow {
+    z-index: 2;
+    font-weight: bold;
+}
+
+.c-button-slide-text {
+    letter-spacing: 0.5em;
+    font-size: 12px;
+}
+
+.c-button-slide-arrow {
+    padding: 4px 7px;
+    border-radius: 50%;
+    color: var(--font-color-primary);
+    background-color: var(--bg-color-accent);
+    transition: background-color 0.5s, transform 0.3s;
+    font-size: 8px;
+    position: absolute;
+    right: 2vw;
+    border: 1px solid var(--border-color-primary);
+}
+
+.c-button-slide:hover {
+    color: var(--font-color-second);
+}
+
+.c-button-slide:hover::before {
+    width: 100%;
+}
+
+.c-button-slide:hover .c-button-slide-arrow {
+    background-color: var(--bg-color-base);
+    color: var(--font-color-second);
+    animation: shrinkBounce 0.3s;
+}
+
+@keyframes shrinkBounce {
+    0% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(0.85);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (min-width: 768px) {
+    .c-button-slide {
+        height: 50px;
+    }
+}

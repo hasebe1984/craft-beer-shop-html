@@ -1,0 +1,49 @@
+/*
+component > nav
+------------------------------
+*/
+
+.c-nav {
+    outline: var(--outline-base);
+    outline-offset: var(--outline-offset-base);
+}
+
+.c-nav_hidden {
+    display: none;
+}
+
+
+.c-nav-title {
+    font-size: clamp(14px, 2vw, 18px);
+    outline: var(--outline-base);
+    outline-offset: var(--outline-offset-base);
+    padding: 2vw;
+    text-align: center;
+}
+
+.c-nav-list {
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: clamp(10px, 1.5vw, 12px);
+}
+
+.c-nav-checkbox {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+}
+
+.c-nav-checkbox input {
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--border-color-base);
+}
+
+@media (min-width: 768px) {
+    .c-nav_hidden {
+        display: block;
+    }
+}

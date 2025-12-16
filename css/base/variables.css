@@ -1,0 +1,47 @@
+/*
+base > variables
+------------------------------
+*/
+
+/* color */
+:root {
+    --light-gray: #bebdbd;
+    --light-gray_opacity: rgba(190, 189, 189, 0.9);
+    --dark-gray: #828282;
+    --white: #fff;
+    --black: #070403;
+    --orange: #ec572e;
+}
+
+:root {
+    --bg-color-base: var(--light-gray);
+    --bg-color-base_opacity: var(--light-gray_opacity);
+    --bg-color-primary: var(--black);
+    --bg-color-secondary: var(--dark-gray);
+    --bg-color-tertiary: var(--white);
+    --bg-color-accent: var(--orange);
+
+    --border-color-base: var(--black);
+    --border-color-primary: var(--light-gray);
+    --border-color-secondary: var(--white);
+    --border-color-accent: var(--orange);
+
+    --font-color-base: var(--black);
+    --font-color-primary: var(--light-gray);
+    --font-color-secondary: var(--dark-gray);
+    --font-color-tertiary: var(--white);
+    --font-color-accent: var(--orange);
+}
+
+/* font */
+:root {
+    --font-famiry-japanese: 'Noto Sans JP', sans-serif;
+    --font-famiry-english: 'Oswald', sans-serif;
+    --font-famiry-hero: 'Shippori Mincho', serif;
+}
+
+/* border */
+:root {
+    --outline-base: 2px solid var(--border-color-base);
+    --outline-offset-base: -1px;
+}

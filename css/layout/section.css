@@ -1,0 +1,30 @@
+/*
+layout > section
+------------------------------
+*/
+
+.l-section {
+    padding-top: 80px;
+}
+
+.l-section-body {
+    padding-top: 48px;
+}
+
+.l-section-top {
+    padding-top: 60px;
+}
+
+@media (min-width: 769px) {
+    .l-section {
+        padding-top: 160px;
+    }
+
+    .l-section-body {
+        padding-top: 96px;
+    }
+
+    .l-section-top {
+        padding-top: 70px;
+    }
+}

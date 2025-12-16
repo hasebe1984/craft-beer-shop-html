@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>堅牢なスクロールアニメーションシステム</title>
+        <style>
+            /* 回転要素 */
+            .scroll-rotate {
+                width: 100px;
+                height: 100px;
+                background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+                border-radius: 50%;
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 1000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-weight: bold;
+                transition: transform 0.1s ease-out;
+            }
+
+            /* ヒーローセクション */
+            .hero-section {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                text-align: center;
+                position: relative;
+            }
+
+            .hero-image {
+                width: 300px;
+                height: 300px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                margin: 0 auto 2rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 4rem;
+                backdrop-filter: blur(10px);
+                border: 2px solid rgba(255, 255, 255, 0.2);
+                transition: transform 0.3s ease;
+            }
+
+            .hero-text {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+                transition: opacity 0.3s ease;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+                opacity: 0.9;
+            }
+
+            /* 横移動テキストセクション */
+            .sliding-text-section {
+                background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+                color: white;
+                overflow: hidden;
+            }
+
+            .sliding-text {
+                font-size: 4rem;
+                font-weight: bold;
+                white-space: nowrap;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                transition: transform 0.1s ease-out;
+            }
+
+            /* 横スクロールセクション */
+            .horizontal-scroll-wrapper {
+                height: 500vh; /* スクロール距離を作る */
+                position: relative;
+            }
+
+            .horizontal-scroll-sticky {
+                position: sticky;
+                top: 0;
+                height: 100vh;
+                overflow: hidden;
+                background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            }
+
+            .horizontal-content {
+                display: flex;
+                height: 100vh;
+                width: 500vw; /* 5つのパネル分 */
+                transition: transform 0.1s ease-out;
+            }
+
+            .horizontal-panel {
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 3rem;
+                text-align: center;
+                position: relative;
+            }
+
+            .horizontal-panel:nth-child(1) {
+                background: rgba(255, 107, 107, 0.3);
+            }
+            .horizontal-panel:nth-child(2) {
+                background: rgba(78, 205, 196, 0.3);
+            }
+            .horizontal-panel:nth-child(3) {
+                background: rgba(255, 159, 26, 0.3);
+            }
+            .horizontal-panel:nth-child(4) {
+                background: rgba(162, 155, 254, 0.3);
+            }
+            .horizontal-panel:nth-child(5) {
+                background: rgba(255, 118, 117, 0.3);
+            }
+
+            /* パララックスセクション */
+            .parallax-section {
+                height: 120vh;
+                position: relative;
+                background: #000;
+                overflow: hidden;
+            }
+
+            .parallax-bg {
+                position: absolute;
+                top: -20vh;
+                left: 0;
+                width: 100%;
+                height: 140vh;
+                background: linear-gradient(45deg, #1e3c72 0%, #2a5298 100%);
+                transition: transform 0.1s ease-out;
+            }
+
+            .parallax-content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                color: white;
+                z-index: 2;
+                opacity: 0;
+                transition: opacity 0.8s ease;
+            }
+
+            .parallax-content.visible {
+                opacity: 1;
+            }
+
+            .parallax-content h2 {
+                font-size: 4rem;
+                margin-bottom: 1rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+
+            /* ズームセクション */
+            .zoom-wrapper {
+                height: 300vh;
+                position: relative;
+            }
+
+            .zoom-sticky {
+                position: sticky;
+                top: 0;
+                height: 100vh;
+                overflow: hidden;
+                background: #000;
+            }
+
+            .zoom-image {
+                width: 100%;
+                height: 100vh;
+                background: linear-gradient(45deg, #fa709a 0%, #fee140 100%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 3rem;
+                font-weight: bold;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+                transition: transform 0.1s ease-out;
+            }
+
+            /* フェードインセクション */
+            .fade-in-section {
+                background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+                color: #333;
+            }
+
+            .fade-in-content {
+                text-align: center;
+                opacity: 0;
+                transform: translateY(50px);
+                transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            }
+
+            .fade-in-content.visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .fade-in-content h2 {
+                font-size: 3rem;
+                margin-bottom: 2rem;
+            }
+
+            .fade-in-content p {
+                font-size: 1.2rem;
+                max-width: 600px;
+                line-height: 1.8;
+            }
+
+            /* デバッグ情報 */
+            .debug-info {
+                position: fixed;
+                bottom: 20px;
+                left: 20px;
+                background: rgba(0, 0, 0, 0.8);
+                color: #00ff00;
+                padding: 1rem;
+                border-radius: 10px;
+                font-family: monospace;
+                font-size: 0.8rem;
+                z-index: 1001;
+                max-width: 300px;
+            }
+
+            .debug-info div {
+                margin-bottom: 0.5rem;
+            }
+
+            /* プログレスバー */
+            .progress-bar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background: rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+
+            .progress-fill {
+                height: 100%;
+                background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #4facfe);
+                width: 0%;
+                transition: width 0.3s ease;
+            }
+
+            /* レスポンシブ */
+            @media (max-width: 768px) {
+                .hero-text {
+                    font-size: 2rem;
+                }
+
+                .sliding-text {
+                    font-size: 2rem;
+                }
+
+                .horizontal-panel {
+                    font-size: 2rem;
+                }
+
+                .parallax-content h2 {
+                    font-size: 2.5rem;
+                }
+
+                .fade-in-content h2 {
+                    font-size: 2rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- プログレスバー -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <!-- ズームセクション -->
+        <div class="zoom-wrapper" data-scroll-type="zoom" data-zoom-scale="2">
+            <div class="zoom-sticky">
+                <div class="zoom-image" data-scroll-element="zoom-image">📸 ズーム効果</div>
+            </div>
+        </div>
+
+        <!-- フェードインセクション -->
+        <section class="fade-in-section" data-scroll-type="fadein">
+            <div class="fade-in-content" data-scroll-element="fade-content" data-trigger-point="0.8">
+                <h2>フェードイン効果</h2>
+                <p>
+                    要素が視界に入るとアニメーションが始まります。このようなスクロール効果により、ユーザーエクスペリエンスが大幅に向上し、より魅力的なWebサイトを作成することができます。
+                </p>
+            </div>
+        </section>
+        <!-- 回転要素 -->
+        <div class="scroll-rotate" data-scroll-type="rotate" data-rotate-speed="10">🎯</div>
+
+        <!-- デバッグ情報 -->
+        <div class="debug-info" id="debugInfo">
+            <div>検出された要素数: <span id="elementCount">0</span></div>
+            <div>アクティブアニメーション: <span id="activeAnimations">0</span></div>
+            <div>スクロール位置: <span id="scrollPosition">0</span>px</div>
+            <div>FPS: <span id="fps">0</span></div>
+        </div>
+
+        <!-- ヒーローセクション -->
+        <section class="hero-section" data-scroll-type="hero">
+            <div>
+                <div class="hero-image" data-scroll-element="hero-image">🚀</div>
+                <h1 class="hero-text" data-scroll-element="hero-text">堅牢なスクロールシステム</h1>
+                <p class="hero-subtitle">HTML要素の順序に依存しない柔軟なアニメーション</p>
+            </div>
+        </section>
+
+        <!-- 横スクロールセクション -->
+        <div class="horizontal-scroll-wrapper" data-scroll-type="horizontal" data-scroll-distance="400">
+            <div class="horizontal-scroll-sticky">
+                <div class="horizontal-content" data-scroll-element="horizontal-content">
+                    <div class="horizontal-panel">
+                        <div>
+                            <h2>パネル 1</h2>
+                            <p>横スクロール開始</p>
+                        </div>
+                    </div>
+                    <div class="horizontal-panel">
+                        <div>
+                            <h2>パネル 2</h2>
+                            <p>スムーズな移動</p>
+                        </div>
+                    </div>
+                    <div class="horizontal-panel">
+                        <div>
+                            <h2>パネル 3</h2>
+                            <p>継続的なスクロール</p>
+                        </div>
+                    </div>
+                    <div class="horizontal-panel">
+                        <div>
+                            <h2>パネル 4</h2>
+                            <p>もうすぐ終了</p>
+                        </div>
+                    </div>
+                    <div class="horizontal-panel">
+                        <div>
+                            <h2>パネル 5</h2>
+                            <p>横スクロール完了</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 横移動テキストセクション -->
+        <section class="sliding-text-section" data-scroll-type="sliding">
+            <div class="sliding-text" data-scroll-element="sliding-text" data-slide-range="50">
+                ← スクロールで横移動するテキスト →
+            </div>
+        </section>
+        <!-- パララックスセクション -->
+        <section class="parallax-section" data-scroll-type="parallax">
+            <div class="parallax-bg" data-scroll-element="parallax-bg" data-parallax-speed="100"></div>
+            <div class="parallax-content" data-scroll-element="parallax-content">
+                <h2>パララックス効果</h2>
+                <p>背景が異なる速度で移動します</p>
+            </div>
+        </section>
+
+        <script>
+            class RobustScrollAnimationSystem {
+                constructor() {
+                    this.animationElements = new Map();
+                    this.ticking = false;
+                    this.lastTime = 0;
+                    this.frameCount = 0;
+                    this.fps = 0;
+
+                    this.init();
+                }
+
+                init() {
+                    this.detectElements();
+                    this.setupScrollListener();
+                    this.startFPSCounter();
+                    this.updateScrollEffects(); // 初回実行
+
+                    console.log('🎉 堅牢なスクロールアニメーションシステムが初期化されました');
+                    console.log(`検出された要素数: ${this.animationElements.size}`);
+                }
+
+                // data属性を使用して要素を自動検出
+                detectElements() {
+                    this.animationElements.clear();
+
+                    // スクロールタイプを持つ全ての要素を検出
+                    const scrollElements = document.querySelectorAll('[data-scroll-type]');
+
+                    scrollElements.forEach((element) => {
+                        const scrollType = element.dataset.scrollType;
+                        const elementId = this.generateElementId(element);
+
+                        const config = {
+                            element: element,
+                            type: scrollType,
+                            ...this.getElementConfig(element),
+                        };
+
+                        this.animationElements.set(elementId, config);
+                    });
+
+                    this.updateDebugInfo();
+                }
+
+                // 要素の一意IDを生成
+                generateElementId(element) {
+                    return (
+                        element.id ||
+                        element.className.split(' ').join('-') + '-' + Math.random().toString(36).substr(2, 9)
+                    );
+                }
+
+                // 要素の設定を取得
+                getElementConfig(element) {
+                    const config = {};
+
+                    // data属性から設定を取得
+                    Object.keys(element.dataset).forEach((key) => {
+                        if (key !== 'scrollType') {
+                            config[key] = element.dataset[key];
+                        }
+                    });
+
+                    // 子要素も検索
+                    const childElements = element.querySelectorAll('[data-scroll-element]');
+                    config.childElements = Array.from(childElements).map((child) => ({
+                        element: child,
+                        name: child.dataset.scrollElement,
+                        ...child.dataset,
+                    }));
+
+                    return config;
+                }
+
+                // スクロールリスナーセットアップ
+                setupScrollListener() {
+                    window.addEventListener('scroll', () => this.requestTick(), { passive: true });
+                    window.addEventListener('resize', () => this.detectElements());
+                }
+
+                requestTick() {
+                    if (!this.ticking) {
+                        requestAnimationFrame(() => this.updateScrollEffects());
+                        this.ticking = true;
+                    }
+                }
+
+                // メインのスクロール効果更新関数
+                updateScrollEffects() {
+                    const scrollTop = window.pageYOffset;
+                    const windowHeight = window.innerHeight;
+                    let activeAnimations = 0;
+
+                    this.animationElements.forEach((config, id) => {
+                        const { element, type } = config;
+
+                        // 要素が存在するかチェック
+                        if (!document.contains(element)) {
+                            this.animationElements.delete(id);
+                            return;
+                        }
+
+                        const rect = element.getBoundingClientRect();
+                        const isVisible = rect.bottom > 0 && rect.top < windowHeight;
+
+                        if (isVisible || type === 'rotate') {
+                            activeAnimations++;
+                            this.applyAnimation(config, scrollTop, windowHeight, rect);
+                        }
+                    });
+
+                    this.updateProgress(scrollTop);
+                    this.updateDebugInfo(activeAnimations);
+                    this.ticking = false;
+                }
+
+                // アニメーションタイプ別の処理
+                applyAnimation(config, scrollTop, windowHeight, rect) {
+                    const { element, type, childElements = [] } = config;
+
+                    switch (type) {
+                        case 'rotate':
+                            this.applyRotateAnimation(element, config, scrollTop);
+                            break;
+
+                        case 'hero':
+                            this.applyHeroAnimation(childElements, rect, windowHeight);
+                            break;
+
+                        case 'sliding':
+                            this.applySlidingAnimation(childElements, config, rect, windowHeight);
+                            break;
+
+                        case 'horizontal':
+                            this.applyHorizontalAnimation(childElements, config, rect, windowHeight);
+                            break;
+
+                        case 'parallax':
+                            this.applyParallaxAnimation(childElements, rect, windowHeight);
+                            break;
+
+                        case 'zoom':
+                            this.applyZoomAnimation(childElements, config, rect, windowHeight);
+                            break;
+
+                        case 'fadein':
+                            this.applyFadeInAnimation(childElements, config, rect, windowHeight);
+                            break;
+                    }
+                }
+
+                // 回転アニメーション
+                applyRotateAnimation(element, config, scrollTop) {
+                    const speed = parseFloat(config.rotateSpeed) || 10;
+                    const rotation = (scrollTop / speed) % 360;
+                    element.style.transform = `rotate(${rotation}deg)`;
+                }
+
+                // ヒーローアニメーション
+                applyHeroAnimation(childElements, rect, windowHeight) {
+                    if (rect.bottom > 0 && rect.top < windowHeight) {
+                        const progress = Math.abs(rect.top) / windowHeight;
+
+                        childElements.forEach((child) => {
+                            if (child.name === 'hero-image') {
+                                const scale = 1 + progress * 2;
+                                child.element.style.transform = `scale(${scale})`;
+                            } else if (child.name === 'hero-text') {
+                                child.element.style.opacity = Math.max(0, 1 - progress * 2);
+                            }
+                        });
+                    }
+                }
+
+                // 横移動アニメーション
+                applySlidingAnimation(childElements, config, rect, windowHeight) {
+                    if (rect.bottom > 0 && rect.top < windowHeight) {
+                        const progress = -rect.top / windowHeight;
+                        const slideRange = parseFloat(config.slideRange) || 50;
+                        const translateX = progress * slideRange - slideRange / 2;
+
+                        childElements.forEach((child) => {
+                            if (child.name === 'sliding-text') {
+                                child.element.style.transform = `translateX(${translateX}vw)`;
+                            }
+                        });
+                    }
+                }
+
+                // 横スクロールアニメーション
+                applyHorizontalAnimation(childElements, config, rect, windowHeight) {
+                    const wrapperHeight = config.element.offsetHeight;
+
+                    if (rect.bottom > 0 && rect.top < windowHeight) {
+                        const progress = Math.min(1, Math.max(0, -rect.top / (wrapperHeight - windowHeight)));
+                        const scrollDistance = parseFloat(config.scrollDistance) || 400;
+                        const translateX = -progress * scrollDistance;
+
+                        childElements.forEach((child) => {
+                            if (child.name === 'horizontal-content') {
+                                child.element.style.transform = `translateX(${translateX}vw)`;
+                            }
+                        });
+                    }
+                }
+
+                // パララックスアニメーション
+                applyParallaxAnimation(childElements, rect, windowHeight) {
+                    if (rect.bottom > 0 && rect.top < windowHeight) {
+                        const progress = -rect.top / windowHeight;
+
+                        childElements.forEach((child) => {
+                            if (child.name === 'parallax-bg') {
+                                const speed = parseFloat(child.parallaxSpeed) || 100;
+                                child.element.style.transform = `translateY(${progress * speed}px)`;
+                            } else if (child.name === 'parallax-content') {
+                                if (rect.top < windowHeight * 0.5) {
+                                    child.element.classList.add('visible');
+                                }
+                            }
+                        });
+                    }
+                }
+
+                // ズームアニメーション
+                applyZoomAnimation(childElements, config, rect, windowHeight) {
+                    const wrapperHeight = config.element.offsetHeight;
+
+                    if (rect.bottom > 0 && rect.top < windowHeight) {
+                        const progress = Math.min(1, Math.max(0, -rect.top / (wrapperHeight - windowHeight)));
+                        const zoomScale = parseFloat(config.zoomScale) || 2;
+                        const scale = 1 + progress * zoomScale;
+
+                        childElements.forEach((child) => {
+                            if (child.name === 'zoom-image') {
+                                child.element.style.transform = `scale(${scale})`;
+                            }
+                        });
+                    }
+                }
+
+                // フェードインアニメーション
+                applyFadeInAnimation(childElements, config, rect, windowHeight) {
+                    const triggerPoint = parseFloat(config.triggerPoint) || 0.8;
+
+                    if (rect.top < windowHeight * triggerPoint) {
+                        childElements.forEach((child) => {
+                            if (child.name === 'fade-content') {
+                                child.element.classList.add('visible');
+                            }
+                        });
+                    }
+                }
+
+                // プログレスバー更新
+                updateProgress(scrollTop) {
+                    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const scrollPercent = (scrollTop / docHeight) * 100;
+                    const progressFill = document.getElementById('progressFill');
+                    if (progressFill) {
+                        progressFill.style.width = `${Math.min(scrollPercent, 100)}%`;
+                    }
+                }
+
+                // デバッグ情報更新
+                updateDebugInfo(activeAnimations = 0) {
+                    const elementCount = document.getElementById('elementCount');
+                    const activeAnimationsEl = document.getElementById('activeAnimations');
+                    const scrollPosition = document.getElementById('scrollPosition');
+                    const fpsEl = document.getElementById('fps');
+
+                    if (elementCount) elementCount.textContent = this.animationElements.size;
+                    if (activeAnimationsEl) activeAnimationsEl.textContent = activeAnimations;
+                    if (scrollPosition) scrollPosition.textContent = Math.round(window.pageYOffset);
+                    if (fpsEl) fpsEl.textContent = this.fps;
+                }
+
+                // FPSカウンター
+                startFPSCounter() {
+                    setInterval(() => {
+                        this.fps = this.frameCount;
+                        this.frameCount = 0;
+                    }, 1000);
+
+                    const countFrame = () => {
+                        this.frameCount++;
+                        requestAnimationFrame(countFrame);
+                    };
+                    countFrame();
+                }
+
+                // 動的要素の再検出
+                refresh() {
+                    this.detectElements();
+                    console.log('🔄 要素を再検出しました');
+                }
+
+                // 特定のアニメーションを無効化/有効化
+                toggleAnimation(elementId, enabled = true) {
+                    const config = this.animationElements.get(elementId);
+                    if (config) {
+                        config.enabled = enabled;
+                    }
+                }
+
+                // パフォーマンス情報取得
+                getPerformanceInfo() {
+                    return {
+                        elementsCount: this.animationElements.size,
+                        fps: this.fps,
+                        memoryUsage: performance.memory
+                            ? {
+                                  used: Math.round(performance.memory.usedJSHeapSize / 1024 / 1024) + 'MB',
+                                  total: Math.round(performance.memory.totalJSHeapSize / 1024 / 1024) + 'MB',
+                              }
+                            : 'N/A',
+                    };
+                }
+            }
+
+            // システムを初期化
+            const scrollSystem = new RobustScrollAnimationSystem();
+
+            // グローバルに公開（デバッグ用）
+            window.scrollSystem = scrollSystem;
+
+            // 動的要素追加のデモ
+            // setTimeout(() => {
+            //     console.log('💡 5秒後に新しい要素を動的追加');
+
+            //     const newSection = document.createElement('section');
+            //     newSection.style.cssText = `
+            //     min-height: 100vh;
+            //     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            //     display: flex;
+            //     align-items: center;
+            //     justify-content: center;
+            //     color: white;
+            //     text-align: center;
+            //     font-size: 2rem;
+            // `;
+            //     newSection.dataset.scrollType = 'fadein';
+            //     newSection.innerHTML = `
+            //     <div data-scroll-element="fade-content" data-trigger-point="0.7">
+            //         <h2>🆕 動的に追加されたセクション</h2>
+            //         <p>このセクションは5秒後に動的に追加されました！</p>
+            //     </div>
+            // `;
+
+            //     document.body.appendChild(newSection);
+            //     scrollSystem.refresh();
+            // }, 5000);
+
+            // キーボードショートカット
+            // document.addEventListener('keydown', (e) => {
+            //     switch (e.key.toLowerCase()) {
+            //         case 'r':
+            //             e.preventDefault();
+            //             scrollSystem.refresh();
+            //             console.log('🔄 手動更新実行');
+            //             break;
+            //         case 'p':
+            //             e.preventDefault();
+            //             console.log('📊 パフォーマンス情報:', scrollSystem.getPerformanceInfo());
+            //             break;
+            //     }
+            // });
+
+            // console.log('🎮 使用可能なコマンド:');
+            // console.log('- Rキー: 要素を手動更新');
+            // console.log('- Pキー: パフォーマンス情報表示');
+            // console.log('- scrollSystem.refresh(): 要素再検出');
+            // console.log('- scrollSystem.getPerformanceInfo(): パフォーマンス情報');
+        </script>
+    </body>
+</html>

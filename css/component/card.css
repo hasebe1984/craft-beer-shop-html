@@ -1,0 +1,126 @@
+/*
+component > card
+------------------------------
+*/
+
+/* card(news) */
+
+.c-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    padding: 2vw;
+    outline: var(--outline-base);
+    outline-offset: var(--outline-offset-base);
+    gap: 2vw;
+}
+
+.c-card-thumbnail {
+    overflow: hidden;
+}
+
+.c-card-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease-in-out;
+}
+
+.c-card:hover img {
+    transform: scale(1.05);
+    transition: transform 0.5s;
+}
+
+.c-card-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.c-card-wrap {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.c-card-tab {
+    background-color: var(--bg-color-secondary);
+    color: var(--font-color-primary);
+    font-size: clamp(8px, 1.5vw, 10px);
+    padding: 0 4px;
+    display: block;
+}
+
+.c-card-data {
+    font-size: clamp(8px, 1.5vw, 10px);
+}
+
+.c-card-title {
+    font-weight: bold;
+    /* margin-top: 24px; */
+}
+
+@media (min-width: 768px) {
+    .c-card {
+        grid-template-columns: 1fr 2fr;
+    }
+}
+
+/* card2(product) */
+.c-card2-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.c-card2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    aspect-ratio: 1/1;
+    padding: 2vw;
+    outline: var(--outline-base);
+    outline-offset: var(--outline-offset-base);
+}
+
+.c-card2-thumbnail {
+    overflow: hidden;
+}
+
+.c-card2-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease-in-out;
+}
+
+.c-card2:hover img {
+    transform: scale(1.05);
+    transition: transform 0.5s;
+}
+
+.c-card2-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.c-card2-name {
+    font-size: clamp(10px, 2vw, 16px);
+}
+
+.c-card2-category {
+    font-size: clamp(8px, 1.5vw, 10px);
+    text-transform: uppercase;
+}
+
+.c-card2-price {
+    font-size: clamp(10px, 2vw, 16px);
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .c-card2-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

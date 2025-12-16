@@ -1,0 +1,68 @@
+/*
+component > title
+------------------------------
+*/
+
+/* h2 */
+.c-title-level2-wrap {
+    height: 15vh;
+    background-size: cover;
+    position: relative;
+}
+
+.c-title-level2-wrap_news {
+    background-image: url(../../img/news/news-hero.webp);
+}
+
+.c-title-level2-wrap_product {
+    background-image: url(../../img/product/product-hero.webp);
+}
+
+.c-title-level2 {
+    font-size: clamp(20px, 10vw, 80px);
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--font-color-primary);
+}
+
+@media (min-width: 768px) {
+    .c-title-level2-wrap {
+        height: 40vh;
+    }
+}
+
+/* h3 */
+.c-title-level3-wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+
+.c-title-level3 {
+    font-size: clamp(16px, 3vw, 20px);
+    outline: var(--outline-base);
+    outline-offset: var(--outline-offset-base);
+    padding: 2vw;
+    text-align: center;
+    font-weight: bold;
+    background-color: var(--bg-color-base);
+    z-index: 600;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .c-title-level3-wrap {
+        grid-template-columns: 3fr 1fr;
+    }
+}
+
+/* h4 */
+
+.c-title-level4 {
+    font-weight: bold;
+    margin-top: 24px;
+}

@@ -1,0 +1,28 @@
+/*
+privacy > privacy
+------------------------------
+*/
+
+.privacy-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.privacy-list {
+    outline: var(--outline-base);
+    outline-offset: var(--outline-offset-base);
+    padding: 24px 24px 30vw 24px;
+
+}
+
+@media (min-width: 768px) {
+    .privacy-outer {
+        grid-template-columns: 3fr 1fr;
+    }
+
+    .privacy-inner {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+
+    }
+}

@@ -1,0 +1,14 @@
+/*!
+product > product
+------------------------------
+*/
+
+.product-container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+    .product-container {
+        grid-template-columns: 3fr 1fr;
+    }
+}

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>商品一覧 | タキシード猫</title>
+    <meta name="description" content="タキシード猫はIPA専門のセレクトショップです。" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/logo/favicon.png" />
+    <link rel="apple-touch-icon" href="img/logo/favicon.png" />
+
+    <!-- googlefonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/base/reset.css" />
+    <link rel="stylesheet" href="css/base/variables.css" />
+    <link rel="stylesheet" href="css/base/base.css" />
+    <link rel="stylesheet" href="css/layout/header.css" />
+    <link rel="stylesheet" href="css/layout/footer.css" />
+    <link rel="stylesheet" href="css/layout/section.css" />
+    <link rel="stylesheet" href="css/component/button.css" />
+    <link rel="stylesheet" href="css/component/space.css" />
+    <link rel="stylesheet" href="css/component/title.css" />
+    <link rel="stylesheet" href="css/component/nav.css" />
+
+    <link rel="stylesheet" href="css/pages/product/product-single.css" />
+
+    <link rel="stylesheet" href="css/animation/animation.css" />
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header">
+        <div class="header-banner">
+            <p class="header-banner-text">6,000円以上のご注文で送料無料</p>
+        </div>
+        <div class="header-outer">
+            <div class="header-humburger">
+                <div class="hamburger-menu" id="hamburger">
+                    <span class="bar bar-1"></span>
+                    <span class="bar bar-2"></span>
+                    <span class="bar bar-3"></span>
+                </div>
+                <nav class="header-humburger-nav overlay-menu" id="menuOverlay">
+                    <ul class="c-button-rotate">
+                        <li class="c-button-rotate-outer">
+                            <a href="index.html#concept" class="c-button-rotate-inner c-button-rotate-inner_large">
+                                <div class="c-button-rotate-text c-button-rotate-text_top c-button-rotate-text_large">
+                                    concept
+                                </div>
+                                <div
+                                    class="c-button-rotate-text c-button-rotate-text_bottom c-button-rotate-text_large">
+                                    concept
+                                </div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="product.html" class="c-button-rotate-inner c-button-rotate-inner_large">
+                                <div class="c-button-rotate-text c-button-rotate-text_top c-button-rotate-text_large">
+                                    products
+                                </div>
+                                <div
+                                    class="c-button-rotate-text c-button-rotate-text_bottom c-button-rotate-text_large">
+                                    products
+                                </div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="news.html" class="c-button-rotate-inner c-button-rotate-inner_large">
+                                <div class="c-button-rotate-text c-button-rotate-text_top c-button-rotate-text_large">
+                                    news
+                                </div>
+                                <div
+                                    class="c-button-rotate-text c-button-rotate-text_bottom c-button-rotate-text_large">
+                                    news
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="c-button-rotate">
+                        <li class="c-button-rotate-outer">
+                            <a href="contact.html" class="c-button-rotate-inner">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">お問い合わせ</div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">お問い合わせ</div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="privacy.html" class="c-button-rotate-inner">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">プライバシーポリシー</div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">プライバシーポリシー</div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="tokushoho.html" class="c-button-rotate-inner">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">特商法に基づく表記</div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">特商法に基づく表記</div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav class="header-nav">
+                    <ul class="c-button-rotate">
+                        <li class="c-button-rotate-outer">
+                            <a href="index.html#concept" class="c-button-rotate-inner">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">concept</div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">concept</div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="product.html" class="c-button-rotate-inner">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">products</div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">products</div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="news.html" class="c-button-rotate-inner">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">news</div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">news</div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <a class="header-logo" href="index.html#top">
+                <img src="img/logo/logo1.png" alt="タキシード猫" width="1024" height="498" />
+            </a>
+            <ul class="header-list">
+                <li>
+                    <a href="login.html" class="c-button-rotate-outer">
+                        <div class="c-button-rotate-inner c-button-rotate-inner_orange">
+                            <div class="c-button-rotate-text c-button-rotate-text_top">ログイン</div>
+                            <div class="c-button-rotate-text c-button-rotate-text_bottom">ログイン</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="cart.html" class="header-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                            <rect width="256" height="256" fill="none" />
+                            <circle cx="88" cy="216" r="16" />
+                            <circle cx="192" cy="216" r="16" />
+                            <path
+                                d="M16,32H40L76.75,164.28A16,16,0,0,0,92.16,176H191a16,16,0,0,0,15.42-11.72L232,72H51.11"
+                                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="16" />
+                        </svg>
+                        <span>1</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!-- header -->
+    <main>
+        <!-- product -->
+        <section class="product-single l-section-top">
+            <div class="product-single-box">
+                <div class="product-single-box-wrap">
+                    <h2 class="product-single-name">fear&trembling</h2>
+                    <picture class="product-single-thumbnail">
+                        <source srcset="img/product/beer04/product-thumbnail04.webp" type="webp" />
+                        <img src="img/product/beer04/product-thumbnail04.jpg" alt="ビールの画像" width="1563" height="1024" />
+                    </picture>
+                </div>
+                <div class="product-single-img">
+                    <picture>
+                        <source srcset="img/product/beer04/product-package04.webp" type="webp" />
+                        <img src="img/product/beer04/product-package04.webp" alt="パッケージ画像" width="1024" height="1024" />
+                    </picture>
+                    <picture>
+                        <source srcset="img/product/beer04/product-package04.webp" type="webp" />
+                        <img src="img/product/beer04/product-package04.webp" alt="パッケージ画像" width="1024" height="1024" />
+                    </picture>
+                    <picture>
+                        <source srcset="img/product/beer04/product-package04.webp" type="webp" />
+                        <img src="img/product/beer04/product-package04.webp" alt="パッケージ画像" width="1024" height="1024" />
+                    </picture>
+                </div>
+            </div>
+            <div class="product-single-box2">
+                <div>
+                    <div class="product-single-spec">
+                        <div>West Coast IPA</div>
+                        <div><span>IBU</span>90</div>
+                        <div><span>ABV</span>12%</div>
+                        <div>japan</div>
+                    </div>
+                    <div class="product-single-description">
+                        <p>
+                            【恐怖と震え】を纏う、哲学的な深みのヘイジーIPA
+                            FEAR & TREMBLING (フィアー・アンド・トレンブリング) は、単なるHazy IPAの枠を超え、飲む者に**「対峙する体験」**を提供する一本です。
+                        </p>
+                        <p>
+                            缶全体を覆うダークなトーンと、霧の中に浮かぶかのような人物の肖像画。これは、19世紀の哲学書からインスパイアされた、存在の根源的な不安を表現しています。口に含む瞬間、その重厚なパッケージデザインとは裏腹に、トロピカルなアロマが弾け、意識を覚醒させます。
+                        </p>
+                        <p>
+                            ミルキーな濁り（ヘイズ）の中に隠されているのは、シトラやモザイクなどのホップが織りなすマンゴー、ピーチ、そして柑橘の鮮烈なブーケ。苦味は抑えられ、絹のような滑らかな口当たりが舌を包み込みます。
+                        </p>
+                        <p>
+                            しかし、飲み込んだ後に訪れるのは、ただの甘い余韻ではありません。ホップの複雑な層から覗く、微かな、しかし抗いがたい苦味とエッジ。それはまるで、霧が晴れた後に見えてくる真実の深遠さのように、飲む者を静かに問いかけます。
+                        </p>
+                        <p>
+                            FEAR & TREMBLING
+                            は、一日の終わりに安らぎを求めるためだけの一杯ではありません。それは、己の内に秘めた「何か」と対話するための、哲学的な液体の導火線です。静かな夜に、この深淵な一杯とともに、自己の内面と向き合ってみませんか？
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <p class="product-single-price">¥1,200-</p>
+                    <div class="product-single-stepper">
+                        <button type="button" aria-label="数量を減らす">-</button>
+                        <input type="text" value="1" min="1" max="99" inputmode="numeric" pattern="[0-9]*" readonly />
+                        <button type="button" aria-label="数量を増やす">+</button>
+                    </div>
+                    <button class="c-button-slide">
+                        <span class="c-button-slide-text">カートに追加する</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="c-space c-space_primary c-space_img"></div>
+
+            <div class="c-space"></div>
+            <div class="product-single-recommend">
+                <p class="c-nav-title">あなたへのオススメ</p>
+                <div class="product-single-recommend-container">
+                    <a href="product-single.html" class="product-single-recommend-item">
+                        <picture>
+                            <source srcset="img/product/beer02/product-thumbnail02.webp" type="webp" />
+                            <img src="img/product/beer02/product-thumbnail02.jpg" alt="ビールの画像" width="1563"
+                                height="1024" />
+                        </picture>
+                        <div class="product-single-recommend-box">
+                            <p class="product-single-recommend-text_small">Double IPA</p>
+                            <p class="product-single-recommend-text">GREEN DAY</p>
+                            <p class="product-single-recommend-text_small">¥1,000-</p>
+                        </div>
+                    </a>
+                    <a href="product-single.html" class="product-single-recommend-item">
+                        <picture>
+                            <source srcset="img/product/beer22/product-thumbnail22.webp" type="webp" />
+                            <img src="img/product/beer22/product-thumbnail22.jpg" alt="ビールの画像" width="1563"
+                                height="1024" />
+                        </picture>
+                        <div class="product-single-recommend-box">
+                            <p class="product-single-recommend-text_small">Hazy IPA</p>
+                            <p class="product-single-recommend-text">OCTOPUS</p>
+                            <p class="product-single-recommend-text_small">¥1,100-</p>
+                        </div>
+                    </a>
+                    <a href="product-single.html" class="product-single-recommend-item">
+                        <picture>
+                            <source srcset="img/product/beer21/product-thumbnail21.webp" type="webp" />
+                            <img src="img/product/beer21/product-thumbnail21.jpg" alt="ビールの画像" width="1563"
+                                height="1024" />
+                        </picture>
+                        <div class="product-single-recommend-box">
+                            <p class="product-single-recommend-text_small">Hazy IPA</p>
+                            <p class="product-single-recommend-text">WORM!</p>
+                            <p class="product-single-recommend-text_small">¥1,500-</p>
+                        </div>
+                    </a>
+                    <a href="product-single.html" class="product-single-recommend-item">
+                        <picture>
+                            <source srcset="img/product/beer17/product-thumbnail17.webp" type="webp" />
+                            <img src="img/product/beer17/product-thumbnail17.jpg" alt="ビールの画像" width="1563"
+                                height="1024" />
+                        </picture>
+                        <div class="product-single-recommend-box">
+                            <p class="product-single-recommend-text_small ">Hazy IPA</p>
+                            <p class="product-single-recommend-text">BAZOOKA CAT</p>
+                            <p class="product-single-recommend-text_small">¥900-</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="c-button_backtolist">
+                    <div class="c-space"></div>
+                    <a href="product.html" class="c-button-slide">
+                        <span class="c-button-slide-text">一覧へ</span>
+                        <div class="c-button-slide-arrow">&gt;</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- product -->
+    </main>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="c-space c-space_primary c-space_img"></div>
+        <div class="footer-content">
+            <div class="footer-box">
+                <a class="footer-logo" href="index.html#top">
+                    <img src="img/logo/logo3.png" alt="タキシード猫" width="1024" height="208" />
+                </a>
+                <div class="footer-sns">
+                    <ul>
+                        <li class="c-button-rotate-outer">
+                            <a href="#" class="c-button-rotate-inner c-button-rotate-inner_sns"
+                                aria-label="X(旧Twitter)">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <rect width="256" height="256" fill="none" />
+                                        <polygon points="48 40 96 40 208 216 160 216 48 40" fill="none"
+                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="16" />
+                                        <line x1="113.88" y1="143.53" x2="48" y2="216" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                                        <line x1="208" y1="40" x2="142.12" y2="112.47" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                                    </svg>
+                                </div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <rect width="256" height="256" fill="none" />
+                                        <polygon points="48 40 96 40 208 216 160 216 48 40" fill="none"
+                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="16" />
+                                        <line x1="113.88" y1="143.53" x2="48" y2="216" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                                        <line x1="208" y1="40" x2="142.12" y2="112.47" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="#" class="c-button-rotate-inner c-button-rotate-inner_sns" aria-label="instagram">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <rect width="256" height="256" fill="none" />
+                                        <circle cx="128" cy="128" r="40" fill="none" stroke="currentColor"
+                                            stroke-miterlimit="10" stroke-width="16" />
+                                        <rect x="32" y="32" width="192" height="192" rx="48" fill="none"
+                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="16" />
+                                        <circle cx="180" cy="76" r="12" />
+                                    </svg>
+                                </div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <rect width="256" height="256" fill="none" />
+                                        <circle cx="128" cy="128" r="40" fill="none" stroke="currentColor"
+                                            stroke-miterlimit="10" stroke-width="16" />
+                                        <rect x="32" y="32" width="192" height="192" rx="48" fill="none"
+                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="16" />
+                                        <circle cx="180" cy="76" r="12" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="#" class="c-button-rotate-inner c-button-rotate-inner_sns" aria-label="facebook">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <rect width="256" height="256" fill="none" />
+                                        <circle cx="128" cy="128" r="96" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                                        <path d="M168,88H152a24,24,0,0,0-24,24V224" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                                        <line x1="96" y1="144" x2="160" y2="144" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                                    </svg>
+                                </div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <rect width="256" height="256" fill="none" />
+                                        <circle cx="128" cy="128" r="96" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                                        <path d="M168,88H152a24,24,0,0,0-24,24V224" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                                        <line x1="96" y1="144" x2="160" y2="144" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="#" class="c-button-rotate-inner c-button-rotate-inner_sns" aria-label="youtube">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <rect width="256" height="256" fill="none" />
+                                        <polygon points="160 128 112 96 112 160 160 128" fill="none"
+                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="16" />
+                                        <path
+                                            d="M24,128c0,29.91,3.07,47.45,5.41,56.47A16,16,0,0,0,39,195.42C72.52,208.35,128,208,128,208s55.48.35,89-12.58a16,16,0,0,0,9.63-10.95c2.34-9,5.41-26.56,5.41-56.47s-3.07-47.45-5.41-56.47a16,16,0,0,0-9.63-11C183.48,47.65,128,48,128,48s-55.48-.35-89,12.58a16,16,0,0,0-9.63,11C27.07,80.54,24,98.09,24,128Z"
+                                            fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="16" />
+                                    </svg>
+                                </div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <rect width="256" height="256" fill="none" />
+                                        <polygon points="160 128 112 96 112 160 160 128" fill="none"
+                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="16" />
+                                        <path
+                                            d="M24,128c0,29.91,3.07,47.45,5.41,56.47A16,16,0,0,0,39,195.42C72.52,208.35,128,208,128,208s55.48.35,89-12.58a16,16,0,0,0,9.63-10.95c2.34-9,5.41-26.56,5.41-56.47s-3.07-47.45-5.41-56.47a16,16,0,0,0-9.63-11C183.48,47.65,128,48,128,48s-55.48-.35-89,12.58a16,16,0,0,0-9.63,11C27.07,80.54,24,98.09,24,128Z"
+                                            fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="16" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="#" class="c-button-rotate-inner c-button-rotate-inner_sns" aria-label="tiktok">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <rect width="256" height="256" fill="none" />
+                                        <path
+                                            d="M168,102a95.55,95.55,0,0,0,56,18V80a56,56,0,0,1-56-56H128V156a28,28,0,1,1-40-25.31V88c-31.83,5.67-56,34.54-56,68a68,68,0,0,0,136,0Z"
+                                            fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="16" />
+                                    </svg>
+                                </div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <rect width="256" height="256" fill="none" />
+                                        <path
+                                            d="M168,102a95.55,95.55,0,0,0,56,18V80a56,56,0,0,1-56-56H128V156a28,28,0,1,1-40-25.31V88c-31.83,5.67-56,34.54-56,68a68,68,0,0,0,136,0Z"
+                                            fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="16" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="footer-nav">
+                <ul class="c-button-rotate">
+                    <li class="c-button-rotate-outer">
+                        <a href="index.html#concept" class="c-button-rotate-inner c-button-rotate-inner_large">
+                            <div class="c-button-rotate-text c-button-rotate-text_top c-button-rotate-text_large">
+                                concept</div>
+                            <div class="c-button-rotate-text c-button-rotate-text_bottom c-button-rotate-text_large">
+                                concept</div>
+                        </a>
+                    </li>
+                    <li class="c-button-rotate-outer">
+                        <a href="product.html" class="c-button-rotate-inner c-button-rotate-inner_large">
+                            <div class="c-button-rotate-text c-button-rotate-text_top c-button-rotate-text_large">
+                                products</div>
+                            <div class="c-button-rotate-text c-button-rotate-text_bottom c-button-rotate-text_large">
+                                products</div>
+                        </a>
+                    </li>
+                    <li class="c-button-rotate-outer">
+                        <a href="news.html" class="c-button-rotate-inner c-button-rotate-inner_large">
+                            <div class="c-button-rotate-text c-button-rotate-text_top c-button-rotate-text_large">
+                                news</div>
+                            <div class="c-button-rotate-text c-button-rotate-text_bottom c-button-rotate-text_large">
+                                news</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="footer-nav footer-nav_sub">
+                <ul class="c-button-rotate">
+                    <li class="c-button-rotate-outer">
+                        <a href="contact.html" class="c-button-rotate-inner">
+                            <div class="c-button-rotate-text c-button-rotate-text_top">お問い合わせ</div>
+                            <div class="c-button-rotate-text c-button-rotate-text_bottom">お問い合わせ</div>
+                        </a>
+                    </li>
+                    <li class="c-button-rotate-outer">
+                        <a href="privacy.html" class="c-button-rotate-inner">
+                            <div class="c-button-rotate-text c-button-rotate-text_top">プライバシーポリシー</div>
+                            <div class="c-button-rotate-text c-button-rotate-text_bottom">プライバシーポリシー</div>
+                        </a>
+                    </li>
+                    <li class="c-button-rotate-outer">
+                        <a href="tokushoho.html" class="c-button-rotate-inner">
+                            <div class="c-button-rotate-text c-button-rotate-text_top">特商法に基づく表記</div>
+                            <div class="c-button-rotate-text c-button-rotate-text_bottom">特商法に基づく表記</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <a href="index.html#top" class="footer-button">
+            <p>back to top</p>
+        </a>
+        <small class="footer-copy">&copy;2025 tuxedo cat</small>
+    </footer>
+    <!-- footer -->
+    <!-- js -->
+    <script src="js/horizontalscroll.js"></script>
+    <script src="js/hamburger.js"></script>
+    <!-- js -->
+</body>
+
+</html>

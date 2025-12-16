@@ -1,0 +1,19 @@
+/*
+base > base
+------------------------------
+*/
+
+body {
+    background-color: var(--bg-color-base);
+    font-family: var(--font-famiry-japanese);
+    font-size: clamp(14px, 2vw, 16px);
+    color: var(--font-color-base);
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0.05rem;
+}
+
+a {
+    cursor: pointer;
+}

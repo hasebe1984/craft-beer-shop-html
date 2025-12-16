@@ -1,0 +1,375 @@
+/*
+animation > animation
+------------------------------
+*/
+
+/* ハンバーガーメニュー */
+
+/* ページスクロール不可 */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* ハンバーガーアイコン */
+.hamburger-menu {
+    position: fixed;
+    top: 30px;
+    left: 20px;
+    /* 画面左上 */
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 2000;
+    /* 最前面に表示 */
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.bar {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--border-color-base);
+    /* 変形アニメーション */
+    transition: all 0.3s ease-in-out;
+}
+
+/* アイコンがクロスになった時 */
+.hamburger-menu.open .bar-1 {
+    /* 中央のバーの位置まで移動させて45度回転 */
+    transform: translateY(8px) rotate(45deg);
+    /* background-color: var(--border-color-primay); */
+    background-color: #fff;
+}
+
+.hamburger-menu.open .bar-2 {
+    /* 中央のバーを非表示 */
+    opacity: 0;
+}
+
+.hamburger-menu.open .bar-3 {
+    /* 中央のバーの位置まで移動させて-45度回転 */
+    transform: translateY(-8px) rotate(-45deg);
+    /* background-color: var(--border-color-primay); */
+    background-color: #fff;
+}
+
+.header-humburger {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    display: block;
+    z-index: 1000;
+    place-self: center start;
+}
+
+.header-humburger-nav {
+    transition: left 0.3s ease;
+    z-index: 999;
+    display: none;
+}
+
+/* フルスクリーンオーバーレイメニュー */
+.overlay-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color-primary);
+    color: var(--font-color-primary);
+    z-index: 1000;
+    overflow-y: hidden;
+    transform: translateX(-100%);
+    /* スライドイン/アウトのアニメーション */
+    transition: transform 0.4s ease-in-out;
+
+    /* メニュー項目のレイアウト調整 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-top: 20vh;
+}
+
+.overlay-menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+}
+
+.overlay-menu ul:first-child {
+    padding-bottom: 10vh;
+}
+
+.overlay-menu.open {
+    transform: translateX(0);
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .hamburger-menu {
+        display: none;
+    }
+}
+
+/* トップヒーロー */
+
+.main_imgBox {
+    overflow: hidden;
+    position: relative;
+    height: calc(100vh - 60px);
+}
+
+.main_img {
+    z-index: 10;
+    transform: scale(1.1);
+    -webkit-animation: anime 36s 0s infinite;
+    animation: anime 36s 0s infinite;
+    /* background-position: center center; */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    position: absolute;
+    opacity: 0;
+}
+
+.main_img img {
+    height: calc(100vh - 60px);
+    width: 100vw;
+    object-fit: cover;
+}
+
+.main_img:nth-of-type(2) {
+    -webkit-animation-delay: 6s;
+    animation-delay: 6s;
+}
+
+.main_img:nth-of-type(3) {
+    -webkit-animation-delay: 12s;
+    animation-delay: 12s;
+}
+
+.main_img:nth-of-type(4) {
+    -webkit-animation-delay: 18s;
+    animation-delay: 18s;
+}
+
+.main_img:nth-of-type(5) {
+    -webkit-animation-delay: 24s;
+    animation-delay: 24s;
+}
+
+.main_img:nth-of-type(6) {
+    -webkit-animation-delay: 30s;
+    animation-delay: 30s;
+}
+
+@keyframes anime {
+    0% {
+        opacity: 0;
+    }
+
+    8% {
+        opacity: 1;
+    }
+
+    17% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+        transform: scale(1.15);
+        z-index: 9;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .main_imgBox {
+        height: calc(100vh - 70px);
+    }
+}
+
+.vintage-warm {
+    filter: contrast(90%) saturate(60%) brightness(50%);
+}
+
+/* 横移動テキストセクション */
+.sliding-text-section {
+    overflow: hidden;
+    text-transform: uppercase;
+}
+
+.sliding-text {
+    font-size: 7vw;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: transform 0.1s ease-out;
+}
+
+/* 横スクロールセクション */
+.horizontal-scroll-wrapper {
+    /* スクロール距離 */
+    height: 500vw;
+}
+
+.horizontal-scroll-sticky {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+}
+
+.horizontal-content {
+    display: flex;
+    flex-direction: row;
+    width: 500vw;
+    transition: transform 0.1s ease-out;
+}
+
+.horizontal-panel {
+    width: 50vw;
+    height: 100vh;
+    justify-content: space-around;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    outline: var(--outline-base);
+    outline-offset: var(--outline-offset-base);
+}
+
+.horizontal-panel-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.horizontal-title {
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 6vh;
+    padding: 0;
+    text-align: left;
+}
+
+.horizontal-text {
+    width: 70%;
+    font-size: clamp(8px, 1.5vw, 14px);
+    padding: 2vw;
+    text-align: left;
+}
+
+.horizontal-table tbody {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 2vw;
+    padding: 2vw;
+}
+
+.horizontal-table tr {
+    display: flex;
+    flex-direction: column;
+}
+
+.horizontal-table th {
+    font-size: clamp(8px, 1.5vw, 12px);
+    font-weight: bold;
+}
+
+.horizontal-table td {
+    font-size: clamp(8px, 1.5vw, 12px);
+}
+
+/* ズームセクション */
+.zoom-wrapper {
+    /* height: 300vh; */
+    height: 50vh;
+    width: 70vw;
+    position: relative;
+}
+
+.zoom-sticky {
+    position: sticky;
+    top: 0;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+.zoom-wrap {
+    display: flex;
+    flex-direction: row;
+}
+
+.zoom-image {
+    /* width: 100%; */
+    /* height: 100vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: transform 0.1s ease-out;
+    font-size: 25px;
+}
+
+/* 横スクロール */
+@keyframes scroll-right {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-1600px);
+    }
+}
+
+.scrolling-wrapper {
+    width: 100vw;
+    height: 15vw;
+    overflow: hidden;
+    position: relative;
+}
+
+.scrolling-container {
+    width: 3200px;
+    display: flex;
+    /* アニメーションの適用 */
+    animation: scroll-right 30s linear infinite;
+}
+
+.scrolling-container img {
+    height: 15vw;
+    object-fit: cover;
+    display: block;
+}
+
+.concept-box {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.concept-box img {
+    outline: var(--outline-base);
+    outline-offset: var(--outline-offset-base);
+    padding: 2vw;
+}
+
+.concept-wrap p {
+    padding: 24px;
+}
+
+@media (min-width: 768px) {
+    .concept-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

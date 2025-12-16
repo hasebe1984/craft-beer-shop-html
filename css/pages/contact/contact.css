@@ -1,0 +1,59 @@
+/*
+contact > contact
+------------------------------
+*/
+
+.contact-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+    padding: 24px;
+    outline: var(--outline-base);
+    outline-offset: var(--outline-offset-base);
+    padding: 24px 24px 30vw 24px;
+}
+
+.c-form-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.c-form-item label:not(:nth-child(3))::after {
+    content: '*';
+    color: var(--font-color-accent);
+}
+
+.c-form-item_row {
+    flex-direction: row;
+    align-items: center;
+    gap: 2vw;
+}
+
+.c-form-text,
+.c-form-textarea {
+    border: 1px solid var(--border-color-base);
+    outline: none;
+    caret-color: var(--font-color-accent);
+    padding: 0 4px;
+}
+
+.c-form-checkbox {
+    border: 1px solid var(--border-color-base);
+    outline: none;
+    width: 1rem;
+    height: 1rem;
+}
+
+.c-form-text {
+}
+
+@media (min-width: 768px) {
+    .contact-inner {
+        grid-template-columns: 3fr 1fr;
+    }
+}

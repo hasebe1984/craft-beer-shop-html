@@ -1,0 +1,108 @@
+/*
+layout > header
+------------------------------
+*/
+
+.header {
+    position: fixed;
+    width: 100vw;
+    height: 70px;
+    z-index: 995;
+}
+
+/* バナー */
+.header-banner {
+    background-color: var(--bg-color-primary);
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-banner-text {
+    color: var(--font-color-primary);
+    font-size: clamp(8px, 1.5vw, 10px);
+}
+
+.header-outer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 2px solid var(--border-color-base);
+    background-color: var(--bg-color-base);
+    height: 40px;
+    padding: 0 2vw;
+}
+
+/* ヘッダーメニュー */
+.header-nav {
+    display: none;
+    place-self: center start;
+}
+
+.header-nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 5vw;
+}
+
+.header-logo {
+    place-self: center;
+}
+
+.header-logo img {
+    width: 40px;
+}
+
+.header-list {
+    display: flex;
+    font-display: row;
+    place-self: center end;
+    align-items: center;
+    gap: 2vw;
+}
+
+.header-icon {
+    position: relative;
+}
+
+.header-icon svg {
+    width: 25px;
+}
+
+.header-icon span {
+    position: absolute;
+    top: 23%;
+    left: 47%;
+    font-size: clamp(8px, 1.5vw, 12px);
+}
+
+@media (min-width: 768px) {
+    .header-outer {
+        height: 50px;
+    }
+
+    .header-humburger {
+        display: none;
+    }
+
+    .header-nav {
+        display: block;
+    }
+
+    .header-logo img {
+        width: 50px;
+    }
+
+    .header-list {
+        gap: 24px;
+    }
+
+    .header-icon svg {
+        width: 35px;
+    }
+
+    .header-icon p {
+        top: 20%;
+        left: 45%;
+    }
+}

@@ -1,0 +1,219 @@
+/*
+product > product-single
+------------------------------
+*/
+
+/* 商品画像 */
+.product-single-box {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.product-single-box-wrap {
+    outline: var(--outline-base);
+    outline-offset: var(--outline-offset-base);
+    position: relative;
+}
+
+.product-single-name {
+    position: absolute;
+    text-transform: uppercase;
+    font-size: clamp(30px, 5vw, 50px);
+    bottom: 0;
+    right: 24px;
+    font-weight: bold;
+}
+
+.product-single-thumbnail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 24px;
+}
+
+.product-single-img {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    outline: var(--outline-base);
+    outline-offset: var(--outline-offset-base);
+    padding: 12px;
+}
+
+@media (min-width: 768px) {
+    .product-single-box {
+        grid-template-columns: 1fr 6fr;
+    }
+
+    .product-single-box-wrap {
+        padding: 48px;
+        order: 2;
+    }
+
+    .product-single-img {
+        flex-direction: column;
+        order: 1;
+    }
+}
+
+/* 商品情報 */
+.product-single-box2 {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.product-single-spec {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    outline: var(--outline-base);
+    outline-offset: var(--outline-offset-base);
+}
+
+.product-single-spec div,
+.product-single-price {
+    outline: var(--outline-base);
+    outline-offset: var(--outline-offset-base);
+    text-align: center;
+    font-size: clamp(12px, 1.5vw, 14px);
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+}
+
+.product-single-spec span {
+    font-size: clamp(4px, 1vw, 10px);
+    display: inline-block;
+}
+
+.product-single-price {
+    font-weight: bold;
+}
+
+.product-single-description {
+    display: flex;
+    flex-direction: column;
+    outline: var(--outline-base);
+    outline-offset: var(--outline-offset-base);
+    gap: 24px;
+    padding: 2vw 2vw 30vw;
+}
+
+@media (min-width: 768px) {
+    .product-single-box2 {
+        grid-template-columns: 5fr 2fr;
+    }
+
+
+    .product-single-spec {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .product-single-spec div,
+    .product-single-price {
+        height: 50px;
+    }
+}
+
+/* 商品カウンター＆カートへ追加ボタン */
+.product-single-stepper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+.product-single-stepper button,
+.product-single-stepper input {
+    outline: var(--outline-base);
+    outline-offset: var(--outline-offset-base);
+    text-align: center;
+    height: 40px;
+    width: 100%;
+}
+
+.product-single-stepper button {
+    color: var(--font-color-secondary);
+    font-weight: bold;
+    font-size: 24px;
+
+}
+
+.product-single-stepper button:hover {
+    color: var(--font-color-base);
+    transition: color 0.5s;
+}
+
+@media (min-width: 768px) {
+
+    .product-single-stepper button,
+    .product-single-stepper input {
+        height: 50px;
+    }
+}
+
+/* オススメの商品 */
+.product-single-recommend-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    cursor: pointer;
+    background-color: var(--bg-color-base);
+}
+
+.product-single-recommend-item {
+    position: relative;
+    padding: 2vw;
+    outline: var(--outline-base);
+    outline-offset: var(--outline-offset-base);
+}
+
+.product-single-recommend-item img {
+    aspect-ratio: 1/1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.product-single-recommend-item:hover .product-single-recommend-box {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.product-single-recommend-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--font-color-primary);
+    font-size: clamp(8px, 1.5vw, 12px);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding: 2vw;
+    gap: 1vw;
+    transition: 0.5s ease;
+    opacity: 0;
+}
+
+.product-single-recommend-text {
+    font-size: clamp(10px, 1.5vw, 14px);
+    font-weight: bold;
+}
+
+.product-single-recommend-text_small {
+    font-size: clamp(8px, 1.5vw, 12px);
+}
+
+@media (min-width: 768px) {
+
+    .product-single-recommend-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

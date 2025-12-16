@@ -1,0 +1,68 @@
+/*
+top > top
+------------------------------
+*/
+/* top */
+.top-hero {
+    position: relative;
+    height: 100vh;
+}
+
+.top-hero-title {
+    font-size: clamp(40px, 5vw, 80px);
+    color: var(--font-color-primary);
+    position: absolute;
+    bottom: 10%;
+    left: 2%;
+    font-family: var(--font-famiry-hero);
+    font-weight: bold;
+    letter-spacing: 0.5em;
+}
+
+.top-hero-title span {
+    display: inline-block;
+}
+
+/* concept */
+
+.concept-title {
+    font-size: clamp(15px, 5vw, 20px);
+    outline: var(--outline-base);
+    outline-offset: var(--outline-offset-base);
+    text-transform: uppercase;
+    text-align: center;
+    padding: 2vw;
+}
+
+.concept-text_big {
+    font-weight: bold;
+    font-size: clamp(25px, 5vw, 40px);
+}
+
+/* type */
+
+/* top-products */
+
+.products {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .products {
+        grid-template-columns: 3fr 1fr;
+    }
+}
+
+/* top-news */
+
+.news {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .news {
+        grid-template-columns: 3fr 1fr;
+    }
+}

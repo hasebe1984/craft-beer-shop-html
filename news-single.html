@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>記事 | タキシード猫</title>
+    <meta name="description" content="タキシード猫はIPA専門のセレクトショップです。" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <link rel="apple-touch-icon" href="img/favicon.png" />
+
+    <!-- googlefonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/base/reset.css" />
+    <link rel="stylesheet" href="css/base/variables.css" />
+    <link rel="stylesheet" href="css/base/base.css" />
+
+    <link rel="stylesheet" href="css/layout/header.css" />
+    <link rel="stylesheet" href="css/layout/footer.css" />
+    <link rel="stylesheet" href="css/layout/section.css" />
+
+    <link rel="stylesheet" href="css/component/button.css" />
+    <link rel="stylesheet" href="css/component/title.css" />
+    <link rel="stylesheet" href="css/component/card.css" />
+    <link rel="stylesheet" href="css/component/nav.css" />
+    <link rel="stylesheet" href="css/component/space.css" />
+
+    <link rel="stylesheet" href="css/pages/news/news-single.css">
+
+    <link rel="stylesheet" href="css/animation/animation.css" />
+</head>
+
+<body id="top">
+    <!-- header -->
+    <header class="header">
+        <div class="header-banner">
+            <p class="header-banner-text">6,000円以上のご注文で送料無料</p>
+        </div>
+        <div class="header-outer">
+            <div class="header-humburger">
+                <div class="hamburger-menu" id="hamburger">
+                    <span class="bar bar-1"></span>
+                    <span class="bar bar-2"></span>
+                    <span class="bar bar-3"></span>
+                </div>
+                <nav class="header-humburger-nav overlay-menu" id="menuOverlay">
+                    <ul class="c-button-rotate">
+                        <li class="c-button-rotate-outer">
+                            <a href="index.html#concept" class="c-button-rotate-inner c-button-rotate-inner_large">
+                                <div class="c-button-rotate-text c-button-rotate-text_top c-button-rotate-text_large">
+                                    concept
+                                </div>
+                                <div
+                                    class="c-button-rotate-text c-button-rotate-text_bottom c-button-rotate-text_large">
+                                    concept
+                                </div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="product.html" class="c-button-rotate-inner c-button-rotate-inner_large">
+                                <div class="c-button-rotate-text c-button-rotate-text_top c-button-rotate-text_large">
+                                    products
+                                </div>
+                                <div
+                                    class="c-button-rotate-text c-button-rotate-text_bottom c-button-rotate-text_large">
+                                    products
+                                </div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="news.html" class="c-button-rotate-inner c-button-rotate-inner_large">
+                                <div class="c-button-rotate-text c-button-rotate-text_top c-button-rotate-text_large">
+                                    news
+                                </div>
+                                <div
+                                    class="c-button-rotate-text c-button-rotate-text_bottom c-button-rotate-text_large">
+                                    news
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="c-button-rotate">
+                        <li class="c-button-rotate-outer">
+                            <a href="contact.html" class="c-button-rotate-inner">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">お問い合わせ</div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">お問い合わせ</div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="privacy.html" class="c-button-rotate-inner">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">プライバシーポリシー</div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">プライバシーポリシー</div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="tokushoho.html" class="c-button-rotate-inner">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">特商法に基づく表記</div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">特商法に基づく表記</div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav class="header-nav">
+                    <ul class="c-button-rotate">
+                        <li class="c-button-rotate-outer">
+                            <a href="index.html#concept" class="c-button-rotate-inner">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">concept</div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">concept</div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="product.html" class="c-button-rotate-inner">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">products</div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">products</div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="news.html" class="c-button-rotate-inner">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">news</div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">news</div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <a class="header-logo" href="index.html#top">
+                <img src="img/logo/logo1.png" alt="タキシード猫" width="1024" height="498" />
+            </a>
+            <ul class="header-list">
+                <li>
+                    <a href="rogin.html" class="c-button-rotate-outer">
+                        <div class="c-button-rotate-inner c-button-rotate-inner_orange">
+                            <div class="c-button-rotate-text c-button-rotate-text_top">ログイン</div>
+                            <div class="c-button-rotate-text c-button-rotate-text_bottom">ログイン</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="cart.html" class="header-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                            <rect width="256" height="256" fill="none" />
+                            <circle cx="88" cy="216" r="16" />
+                            <circle cx="192" cy="216" r="16" />
+                            <path
+                                d="M16,32H40L76.75,164.28A16,16,0,0,0,92.16,176H191a16,16,0,0,0,15.42-11.72L232,72H51.11"
+                                fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="16" />
+                        </svg>
+                        <span>1</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!-- header -->
+    <main>
+        <!-- news-single -->
+        <section class="news-single l-section-top">
+            <picture class="news-single-thumbnail">
+                <source srcset="img/news/lifestyle/lifestyle01.webp" type="webp" />
+                <img src="img/news/lifestyle/lifestyle01.jpg" alt="ビールの画像" width="1563" height="1024" />
+            </picture>
+            <div class="news-single-info">
+                <p class="c-card-title">「ビールと映画の夜」ライアン・マーフィー×IPA 禁断の夜間鑑賞会</p>
+                <div class="news-single-info-box">
+                    <p class="c-card-data">ライフスタイル</p>
+                    <p class="c-card-data">2025年9月1日</p>
+                </div>
+            </div>
+            <div class="news-single-box">
+                <div class="news-single-article">
+                    <p>
+                        <span class="news-single-article-title">
+                            今回の「ビールと映画の夜」は、鬼才、ライアン・マーフィー制作作品特集！
+                        </span>
+                    </p>
+                    <p>
+                        彼の作品群は、圧倒的なビジュアルと、その裏に潜む人間性の深みによって成り立っています。豪華絢爛な舞台で繰り広げられる人間模様、歴史の闇に潜む事件、そしてキャラクターたちの壮大な野望—これらはすべて、彼のユニークなレンズを通して描かれます。
+                    </p>
+                    <p>
+                        この複雑な世界観を味わい尽くすには、単なるライトビールでは役不足です。必要なのは、**ホップの多層的なアロマと、モルトの厚みという「カウンターパンチ」**を持つIPA。さあ、マーフィー作品の持つ過剰な美学と、IPAのホップの化学反応を紐解きながら、今宵の最高の一本を選びましょう。
+                    </p>
+                    <h3 class="news-single-article-heading">
+                        第1章：ジューシーな濁りが受け止める「美学とロマンの夜」
+                    </h3>
+                    <p>
+                        ライアン・マーフィー作品といえば、ゴージャスで色彩豊かな映像美です。特に、華やかな舞台で成功を夢見る人々や、時代のロマンを描く作品は、その時代のファッション、セット、そして登場人物の個性が爆発しています。
+                    </p>
+                    <p>
+                        この華やかな世界観に合わせるのは、ニューイングランドIPA（NEIPA）が最適。NEIPAのヘイジー（濁り）は、まるで作品の夢のようなフィルターをかけた映像とシンクロします。苦味を抑えた柔らかな口当たりと、マンゴー、パッションフルーツのようなトロピカルな甘いアロマは、マーフィー作品の持つ過剰なまでの幸福感とロマンを増幅させます。
+                    </p>
+                    <p>
+                        感動的な歌唱シーンや、煌びやかなパーティーシーン。その瞬間にNEIPAを一口飲むと、ホップの香りが鼻腔をくすぐり、視覚的な美しさを味覚でも体感させてくれます。
+                    </p>
+                    <table class="news-single-article-table">
+                        <thead>
+                            <tr>
+                                <th>おすすめIPA</th>
+                                <th>ペアリング作品と理由</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>NEW ENGLAND IPA
+                                    (ヘイジー＆フルーティー)</td>
+                                <td>
+                                    『Glee』、『ハリウッド』
+                                    <span>音楽や映画産業の華やかなビジュアルと、キャラクターの持つ情熱と挑戦を描く作品。NEIPAの華やかな香りと優しい口当たりが、作品の持つ夢見るような魅力を完璧に表現します。</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>HAZY PALE
+                                    ALE(低アルコールNEIPA系)</td>
+                                <td>
+                                    『ザ・ポリティシャン』
+                                    <span>若者のエリート主義と野心を追う作品。NEIPAより軽やかなHazy Pale
+                                        Aleの飲みやすさが、作品の持つ軽快なテンポと小気味よい毒に寄り添います。</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3 class="news-single-article-heading">
+                        第2章：シャープな苦味が切り裂く「緊張と恐怖の夜」
+                    </h3>
+                    <p>
+                        マーフィー作品のもう一つの顔、それは『アメリカン・ホラー・ストーリー』や『ダーマー』に代表される、ダークでグロテスクな世界観です。人間の業や社会のタブーを鋭く抉り出すこれらの作品には、曖昧さを許さないビールが必要です。
+                    </p>
+                    <p>
+                        そこで登場するのが、ウェストコーストIPA（WIPA）。WIPAのクリアで強烈な苦味は、作品の持つ冷徹さ、緊張感、そして倫理観の崩壊を体現します。松脂やグレープフルーツの皮のような鋭利なアロマは、まるで事件の真相を突き詰める鋭いナイフのようです。
+                    </p>
+                    <p>
+                        画面の展開がスリリングになり、手に汗握るシーンでは、あえて苦味の強いWIPAを一口。その苦味が脳を叩き起こし、恐怖と興奮を増幅させます。ダークなテーマに意識が引っ張られそうになったとき、WIPAのドライなキレ味が現実へ引き戻す役割も果たしてくれます。
+                    </p>
+                    <table class="news-single-article-table">
+                        <thead>
+                            <tr>
+                                <th>おすすめIPA</th>
+                                <th>ペアリング作品と理由</th>
+                            </tr>
+                        </thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>WEST COAST
+                                    IPA(ハイIBU、ドライ)</td>
+                                <td>
+                                    『ダーマー』、『アメリカン・ホラー・ストーリー：アサイラム』
+                                    <span>作品の持つ陰鬱さ、緊張感、そして冷酷な視点に、WIPAのクリアな苦味が完全に同調します。複雑なホップのアロマが、事件の多層的な闇を表現。</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>BLACK
+                                    IPA(WIPAのダークモルト版)</td>
+                                <td>
+                                    『Nip/Tuck マイアミ整形外科医』、『ラチェッド』
+                                    <span>華やかな世界に潜む人間関係の毒やサイコパスなテーマ。ダークモルトのロースト感が陰影を深めつつ、ホップの苦味が退廃的な美しさを引き立てます。</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3 class="news-single-article-heading">
+                        第3章：ABVとIBUが爆発する「圧倒的エネルギーの夜」
+                    </h3>
+                    <p>
+                        マーフィーのアンソロジー作品や、実話に基づいた重厚なシリーズには、強烈なエネルギーとドラマの密度が凝縮されています。これらを一気に、そして深く楽しむには、通常のIPAではパワー不足。**ダブルIPA（DIPA）**の登場です。
+                    </p>
+                    <p>
+                        DIPAは、ホップの量が多ければ多いほど、それを支えるモルトの甘み（ボディ）も濃厚になります。この「苦味」と「甘み」の激しい拮抗こそが、マーフィー作品の魅力である**「善」と「悪」、「夢」と「現実」のダイナミックな対立**を表現します。
+                    </p>
+                    <p>
+                        『アメリカン・クライム・ストーリー』のような実話に基づいた重厚なドラマを観る夜。DIPAのハイアルコールな温かさが、映画の深遠なテーマと人間の業をじっくりと咀嚼する手助けをしてくれるでしょう。飲みごたえのあるビールは、マーフィーの長尺なエピソードにも最後まで集中力を切らさないための「味覚のブースター」になります。
+                    </p>
+                    <table class="news-single-article-table">
+                        <thead>
+                            <tr>
+                                <th>おすすめIPA</th>
+                                <th>ペアリング作品と理由</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>DOUBLE
+                                    IPA(高ABV、高モルト)</td>
+                                <td>『アメリカン・クライム・ストーリー：O・J・シンプソン事件』
+                                    <span>緻密な法廷ドラマの持つ緊張感と情報の多さに、DIPAの濃密なボディが対応。ホップの苦味が、アメリカ社会の複雑な闇を表現します。</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>TRIPLE
+                                    IPA(究極のアルコール度数)</td>
+                                <td>『フュード/確執』
+                                    <span>伝説的ハリウッド女優たちの壮絶な対立を描いたアンソロジー。TIPAの爆発的なホップが、作品の持つ激しいドラマと過剰な感情に呼応します。</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3 class="news-single-article-heading">
+                        第4章：「甘さ」と「苦さ」が紡ぐ複雑な感情
+                    </h3>
+                    <p>
+                        ライアン・マーフィー監督作品が持つ最大の魅力は、一見明るいテーマの裏に潜む陰湿さ、あるいは冷酷なテーマの奥に見せる人間の弱さという「二面性」です。
+                    </p>
+                    <p>
+                        これは、IPAの構造と全く同じです。
+                    </p>
+                    <ul class="news-single-article-list">
+                        <li>
+                            <span>ホップの「苦味」が皮肉と闇を表現</span>
+                            <span>IPAの持つ強烈な苦味成分（イソフムロン）は、マーフィーが描く社会の不条理、過激な事件、登場人物の葛藤といったダークサイドを味覚で際立たせます。</span>
+                        </li>
+                        <li>
+                            <span>モルトの「甘み」が希望と人間愛を表現</span>
+                            <span>その苦味の裏で、モルトが提供するパンやキャラメルのような甘みは、作品の根底に流れる愛、希望、そして人間のつながりといったポジティブな感情を優しく支えます。マーフィー作品に感動し、ほろりと涙する瞬間、この甘みが心に染み渡るのです。</span>
+                        </li>
+                    </ul>
+                    <p>
+                        ライアン・マーフィー作品は情報量が多い分、最高の鑑賞体験のために細部にこだわりましょう。
+                    </p>
+                    <ul class="news-single-article-list">
+                        <li>
+                            <span>① 映像美に合わせるグラス選び</span>
+                            <span>NEIPAには、アロマを最大限に引き出すチューリップ型を。WIPAやDIPAには、強烈な泡立ちを制御するストレートなパイントグラスを。グラスを変えるだけで、ビールの見え方（マーフィー作品のビジュアル）が変わります。</span>
+                        </li>
+                        <li>
+                            <span>② おつまみは「色彩」を意識！</span>
+                            <span>マーフィーの作品は色彩が重要です。NEIPAには鮮やかなフルーツや彩りのあるチーズを。ダークな作品には、黒胡椒を効かせたドライミートなど、色と味が濃いものを選ぶと、映像と味覚のリンクが深まります。</span>
+                        </li>
+                        <li>
+                            <span>③ 休憩はホップの「幕間」として楽しむ</span>
+                            <span>長編やアンソロジーの場合、休憩時にビールを一口。ホップのアロマを嗅覚に集中させ、直前のシーンの感情をリセットします。これが、次のシーンへの期待感と集中力を高めるマーフィー流の鑑賞術です。</span>
+                        </li>
+                    </ul>
+                    <h3 class="news-single-article-heading">
+                        まとめ：あなたの夜を特別な一本に
+                    </h3>
+                    <p>
+                        いかがでしたか？ライアン・マーフィー作品は、我々ホップ中毒者が求める**「多層的で複雑な刺激」**を完璧に提供してくれます。
+                    </p>
+                    <p class="news-single-article_bold">
+                        彼の作品の持つ過剰なまでの美しさと、その奥に潜むヒューマンドラマを、IPAの濃厚なホップフレーバーと共に、じっくりと味わい尽くしてください。
+                    </p>
+                    <p>
+                        さあ、今すぐ当サイトでお気に入りのIPAを見つけて、最高の「ライアン・マーフィーとIPAの夜」を始めましょう！
+                    </p>
+                    <div class="news-single-article-signature">
+                        — ホップ中毒者より愛を込めて
+                    </div>
+                </div>
+                <div class="c-nav"></div>
+            </div>
+
+            <div class="c-space c-space_primary c-space_img"></div>
+
+            <div class="news-single-recommend">
+                <p class="c-nav-title">関連記事</p>
+                <div class="news-single-recommend-container">
+                    <a href="news-single.html" class="news-single-recommend-item">
+                        <picture>
+                            <source srcset="img/news/lifestyle/lifestyle02.webp" type="webp" />
+                            <img src="img/news/lifestyle/lifestyle02.jpg" alt="ビールの画像" width="1563" height="1024" />
+                        </picture>
+                        <div class="news-single-recommend-box">
+                            <div class="news-single-recommend-text news-single-recommend-text_small">ライフスタイル</div>
+                            <div class="news-single-recommend-text">「ビールとチーズの最高ペアリング5選」</div>
+                        </div>
+                    </a>
+                    <a href="news-single.html" class="news-single-recommend-item">
+                        <picture>
+                            <source srcset="img/news/lifestyle/lifestyle03.webp" type="webp" />
+                            <img src="img/news/lifestyle/lifestyle03.jpg" alt="ビールの画像" width="1563" height="1024" />
+                        </picture>
+                        <div class="news-single-recommend-box">
+                            <div class="news-single-recommend-text news-single-recommend-text_small">ライフスタイル</div>
+                            <div class="news-single-recommend-text">「クラフトビールを贈ろう！ギフト選びのコツ」</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="c-button_backtolist">
+                    <div class="c-space"></div>
+                    <a href="news.html" class="c-button-slide">
+                        <span class="c-button-slide-text">一覧へ</span>
+                        <div class="c-button-slide-arrow">&gt;</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- news -->
+    </main>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="c-space c-space_primary c-space_img"></div>
+        <div class="footer-content">
+            <div class="footer-box">
+                <a class="footer-logo" href="index.html#top">
+                    <img src="img/logo/logo3.png" alt="タキシード猫" width="1024" height="208" />
+                </a>
+                <div class="footer-sns">
+                    <ul>
+                        <li class="c-button-rotate-outer">
+                            <a href="#" class="c-button-rotate-inner c-button-rotate-inner_sns"
+                                aria-label="X(旧Twitter)">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <rect width="256" height="256" fill="none" />
+                                        <polygon points="48 40 96 40 208 216 160 216 48 40" fill="none"
+                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="16" />
+                                        <line x1="113.88" y1="143.53" x2="48" y2="216" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                                        <line x1="208" y1="40" x2="142.12" y2="112.47" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                                    </svg>
+                                </div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <rect width="256" height="256" fill="none" />
+                                        <polygon points="48 40 96 40 208 216 160 216 48 40" fill="none"
+                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="16" />
+                                        <line x1="113.88" y1="143.53" x2="48" y2="216" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                                        <line x1="208" y1="40" x2="142.12" y2="112.47" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="#" class="c-button-rotate-inner c-button-rotate-inner_sns" aria-label="instagram">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <rect width="256" height="256" fill="none" />
+                                        <circle cx="128" cy="128" r="40" fill="none" stroke="currentColor"
+                                            stroke-miterlimit="10" stroke-width="16" />
+                                        <rect x="32" y="32" width="192" height="192" rx="48" fill="none"
+                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="16" />
+                                        <circle cx="180" cy="76" r="12" />
+                                    </svg>
+                                </div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <rect width="256" height="256" fill="none" />
+                                        <circle cx="128" cy="128" r="40" fill="none" stroke="currentColor"
+                                            stroke-miterlimit="10" stroke-width="16" />
+                                        <rect x="32" y="32" width="192" height="192" rx="48" fill="none"
+                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="16" />
+                                        <circle cx="180" cy="76" r="12" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="#" class="c-button-rotate-inner c-button-rotate-inner_sns" aria-label="facebook">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <rect width="256" height="256" fill="none" />
+                                        <circle cx="128" cy="128" r="96" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                                        <path d="M168,88H152a24,24,0,0,0-24,24V224" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                                        <line x1="96" y1="144" x2="160" y2="144" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                                    </svg>
+                                </div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <rect width="256" height="256" fill="none" />
+                                        <circle cx="128" cy="128" r="96" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                                        <path d="M168,88H152a24,24,0,0,0-24,24V224" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                                        <line x1="96" y1="144" x2="160" y2="144" fill="none" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="16" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="#" class="c-button-rotate-inner c-button-rotate-inner_sns" aria-label="youtube">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <rect width="256" height="256" fill="none" />
+                                        <polygon points="160 128 112 96 112 160 160 128" fill="none"
+                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="16" />
+                                        <path
+                                            d="M24,128c0,29.91,3.07,47.45,5.41,56.47A16,16,0,0,0,39,195.42C72.52,208.35,128,208,128,208s55.48.35,89-12.58a16,16,0,0,0,9.63-10.95c2.34-9,5.41-26.56,5.41-56.47s-3.07-47.45-5.41-56.47a16,16,0,0,0-9.63-11C183.48,47.65,128,48,128,48s-55.48-.35-89,12.58a16,16,0,0,0-9.63,11C27.07,80.54,24,98.09,24,128Z"
+                                            fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="16" />
+                                    </svg>
+                                </div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <rect width="256" height="256" fill="none" />
+                                        <polygon points="160 128 112 96 112 160 160 128" fill="none"
+                                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="16" />
+                                        <path
+                                            d="M24,128c0,29.91,3.07,47.45,5.41,56.47A16,16,0,0,0,39,195.42C72.52,208.35,128,208,128,208s55.48.35,89-12.58a16,16,0,0,0,9.63-10.95c2.34-9,5.41-26.56,5.41-56.47s-3.07-47.45-5.41-56.47a16,16,0,0,0-9.63-11C183.48,47.65,128,48,128,48s-55.48-.35-89,12.58a16,16,0,0,0-9.63,11C27.07,80.54,24,98.09,24,128Z"
+                                            fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="16" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="c-button-rotate-outer">
+                            <a href="#" class="c-button-rotate-inner c-button-rotate-inner_sns" aria-label="tiktok">
+                                <div class="c-button-rotate-text c-button-rotate-text_top">
+                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <rect width="256" height="256" fill="none" />
+                                        <path
+                                            d="M168,102a95.55,95.55,0,0,0,56,18V80a56,56,0,0,1-56-56H128V156a28,28,0,1,1-40-25.31V88c-31.83,5.67-56,34.54-56,68a68,68,0,0,0,136,0Z"
+                                            fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="16" />
+                                    </svg>
+                                </div>
+                                <div class="c-button-rotate-text c-button-rotate-text_bottom">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                                        <rect width="256" height="256" fill="none" />
+                                        <path
+                                            d="M168,102a95.55,95.55,0,0,0,56,18V80a56,56,0,0,1-56-56H128V156a28,28,0,1,1-40-25.31V88c-31.83,5.67-56,34.54-56,68a68,68,0,0,0,136,0Z"
+                                            fill="none" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="16" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="footer-nav">
+                <ul class="c-button-rotate">
+                    <li class="c-button-rotate-outer">
+                        <a href="index.html#concept" class="c-button-rotate-inner c-button-rotate-inner_large">
+                            <div class="c-button-rotate-text c-button-rotate-text_top c-button-rotate-text_large">
+                                concept</div>
+                            <div class="c-button-rotate-text c-button-rotate-text_bottom c-button-rotate-text_large">
+                                concept</div>
+                        </a>
+                    </li>
+                    <li class="c-button-rotate-outer">
+                        <a href="product.html" class="c-button-rotate-inner c-button-rotate-inner_large">
+                            <div class="c-button-rotate-text c-button-rotate-text_top c-button-rotate-text_large">
+                                products</div>
+                            <div class="c-button-rotate-text c-button-rotate-text_bottom c-button-rotate-text_large">
+                                products</div>
+                        </a>
+                    </li>
+                    <li class="c-button-rotate-outer">
+                        <a href="news.html" class="c-button-rotate-inner c-button-rotate-inner_large">
+                            <div class="c-button-rotate-text c-button-rotate-text_top c-button-rotate-text_large">
+                                news</div>
+                            <div class="c-button-rotate-text c-button-rotate-text_bottom c-button-rotate-text_large">
+                                news</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="footer-nav footer-nav_sub">
+                <ul class="c-button-rotate">
+                    <li class="c-button-rotate-outer">
+                        <a href="contact.html" class="c-button-rotate-inner">
+                            <div class="c-button-rotate-text c-button-rotate-text_top">お問い合わせ</div>
+                            <div class="c-button-rotate-text c-button-rotate-text_bottom">お問い合わせ</div>
+                        </a>
+                    </li>
+                    <li class="c-button-rotate-outer">
+                        <a href="privacy.html" class="c-button-rotate-inner">
+                            <div class="c-button-rotate-text c-button-rotate-text_top">プライバシーポリシー</div>
+                            <div class="c-button-rotate-text c-button-rotate-text_bottom">プライバシーポリシー</div>
+                        </a>
+                    </li>
+                    <li class="c-button-rotate-outer">
+                        <a href="tokushoho.html" class="c-button-rotate-inner">
+                            <div class="c-button-rotate-text c-button-rotate-text_top">特商法に基づく表記</div>
+                            <div class="c-button-rotate-text c-button-rotate-text_bottom">特商法に基づく表記</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <a href="index.html#top" class="footer-button">
+            <p>back to top</p>
+        </a>
+        <small class="footer-copy">&copy;2025 tuxedo cat</small>
+    </footer>
+    <!-- footer -->
+    <!-- js -->
+    <script src="js/horizontalscroll.js"></script>
+    <script src="js/hamburger.js"></script>
+    <!-- js -->
+</body>
+
+</html>
