@@ -8,6 +8,8 @@ IPAに特化したクラフトビール専門店のECサイト。
 
 
 
+
+
 ![アプリケーションのスクリーンショット](img/screenshot.png)
 
 ## 🌐 概要
@@ -20,6 +22,8 @@ IPAに特化したクラフトビール専門店のECサイト。
 
 
 
+
+
 ## 🛠 技術スタック
 
 * **言語**: HTML, CSS, JavaScript
@@ -27,6 +31,8 @@ IPAに特化したクラフトビール専門店のECサイト。
 * **ツール**: VS Code
 
 * **バージョン管理**: Git / GitHub
+
+
 
 
 
@@ -159,4 +165,5 @@ root
 ├── .stylelintrc.json    # Stylelint設定 (CSS構文チェック)
 
 └── *.html               # 各ページHTMLファイル (index.html, contact.html 等)
+
 
