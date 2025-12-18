@@ -3,6 +3,7 @@
 IPAに特化したクラフトビール専門店のECサイト。
 「苦味に、品格を。」をコンセプトに、世界中のホップの魅力を伝える洗練されたデザインを目指してコーディングを行いました。
 <br>
+<br>
 
 ![アプリケーションのスクリーンショット](img/screenshot.png)
 <br>
@@ -113,6 +114,3 @@ root
 ├── .prettierrc.json     # Prettier設定 (コードフォーマッター)
 ├── .stylelintrc.json    # Stylelint設定 (CSS構文チェック)
 └── *.html               # 各ページHTMLファイル (index.html, contact.html 等)
-
-
-
